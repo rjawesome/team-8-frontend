@@ -1,4 +1,13 @@
 ## Team 8: The Project
+If your ubuntu version is old, upgrading ruby
+```bash
+wget http://ftp.ruby-lang.org/pub/ruby/2.7/ruby-2.7.1.tar.gz
+tar -xzvf ruby-2.7.1.tar.gz
+cd ruby-2.7.1/
+./configure
+make
+sudo make install
+```
 
 Installation
 ```bash
