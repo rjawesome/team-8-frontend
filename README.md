@@ -2,8 +2,10 @@
 
 Installation
 ```bash
+apt install ruby-bundler
 bundle install
 ```
+Also update ruby initially to make sure there is compatibility, then install the bundler to be able to use the gemfile and install packages.
 
 Usage
 
