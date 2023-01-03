@@ -2,6 +2,7 @@
 
 Installation
 ```bash
+apt install ruby-bundler
 bundle install
 ```
 
