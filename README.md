@@ -1,7 +1,7 @@
 ## Team 8: The Project
 
 Installation
-```
+```bash
 bundle install
 ```
 
