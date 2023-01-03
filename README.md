@@ -1,4 +1,4 @@
-## The Team 8 Project
+## Team 8: The Project
 
 Usage
 
