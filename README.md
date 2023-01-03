@@ -1,4 +1,4 @@
-## The Reunion Project
+## The Project
 
 Usage
 
