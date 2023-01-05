@@ -6,7 +6,7 @@
 ## FRQ 2
 - [ ] Create a person object: take in the email, password, age, name, gender, height (in), weight (lbs)
 - [ ] Input data for a person object: take in email, password, steps, calories, day, month, year
-- [ ] Get data for a person object: take in email, password and get out active steps, days where each has year/month/day, steps, calories, distance traveled
+- [ ] Get data for a person object: take in email, password and get out active steps, active days, average steps, days where each has year/month/day, steps, calories, distance traveled
 ## FRQ 3
 - [ ] Take in expression, give a result
 ## FRQ 4
