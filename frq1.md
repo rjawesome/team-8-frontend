@@ -17,3 +17,25 @@
 <input type="button" onClick="getDayInfo()">Get Day Info</input>
 <input type="button" onClick="getLeapYears()">Find Number of Leap Years</input>
 <input type="button" onClick="getYearFact()">Get Year Fact</input>
+
+<label id="result"></label>
+
+<script>
+
+    function getYearInfo() {
+        String link = "https://backend-csa.rohanj.dev/calendar1/" + Document.getElementById("year1");
+        fetch(link, {})
+    }
+
+    function getDayInfo() {
+
+    }
+
+    function getLeapYears() {
+
+    }
+
+    function getYearFact() {
+
+    }
+</script>
