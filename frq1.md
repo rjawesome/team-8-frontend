@@ -22,20 +22,103 @@
 
 <script>
 
+    const options = {
+            method: 'GET', // *GET, POST, PUT, DELETE, etc.
+            mode: 'cors', // no-cors, *cors, same-origin
+            cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
+            credentials: 'omit', // include, *same-origin, omit
+            headers: {
+            'Content-Type': 'application/json'
+            // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
+        };
+    
     function getYearInfo() {
-        String link = "https://backend-csa.rohanj.dev/calendar1/" + Document.getElementById("year1");
-        fetch(link, {})
-    }
+        String url = "https://backend-csa.rohanj.dev/calendar1/yearInfo/" + Document.getElementById("year1").innerHTML;
+
+        fetch(url, options).then(response => {
+
+            response.json().then(data => {
+                var table = "<table>"
+                for (var key in data) {
+                if (data.hasOwnProperty(key)) {
+                    table += '<tr><td>' + key + '</td><td>' + data[key] + '</td></tr>';
+                    }
+                }
+            table += '</table>';
+            document.body.innerHTML += table;
+            })
+        })
+
+        .catch(err => {
+            Document.getElementById("result").innerHTML = "Error: " + err;
+        })
+
+        }
 
     function getDayInfo() {
+        String url = "https://backend-csa.rohanj.dev/calendar1/dayInfo/" + Document.getElementById("day").innerHTML;
 
+        fetch(url, options).then(response => {
+
+            response.json().then(data => {
+                var table = "<table>"
+                for (var key in data) {
+                if (data.hasOwnProperty(key)) {
+                    table += '<tr><td>' + key + '</td><td>' + data[key] + '</td></tr>';
+                    }
+                }
+            table += '</table>';
+            document.body.innerHTML += table;
+            })
+        })
+
+        .catch(err => {
+            Document.getElementById("result").innerHTML = "Error: " + err;
+        })
     }
 
     function getLeapYears() {
+        String url = "https://backend-csa.rohanj.dev/calendar1/leapYears/" + Document.getElementById("year1").innerHTML + "/" + Document.getElementById("year2").innerHTML;
 
+        fetch(url, options).then(response => {
+
+            response.json().then(data => {
+                var table = "<table>"
+                for (var key in data) {
+                if (data.hasOwnProperty(key)) {
+                    table += '<tr><td>' + key + '</td><td>' + data[key] + '</td></tr>';
+                    }
+                }
+            table += '</table>';
+            document.body.innerHTML += table;
+            })
+        })
+
+        .catch(err => {
+            Document.getElementById("result").innerHTML = "Error: " + err;
+        })
     }
 
     function getYearFact() {
+        String url = "https://backend-csa.rohanj.dev/calendar2/" + Document.getElementById("year1").innerHTML;
 
+        fetch(url, options).then(response => {
+
+            response.json().then(data => {
+                var table = "<table>"
+                for (var key in data) {
+                if (data.hasOwnProperty(key)) {
+                    table += '<tr><td>' + key + '</td><td>' + data[key] + '</td></tr>';
+                    }
+                }
+            table += '</table>';
+            document.body.innerHTML += table;
+            })
+        })
+
+        .catch(err => {
+            Document.getElementById("result").innerHTML = "Error: " + err;
+        })
     }
 </script>
