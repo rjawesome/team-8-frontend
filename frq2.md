@@ -44,5 +44,28 @@
             }
         }
         console.log(obj)
+
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'https://csa-backend.rohanj.dev/api/steptrack1/createPerson', true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.onload = function () {
+          if (xhr.status === 201) {
+            // If the request was successful, create an HTML table with the response data
+            var response = JSON.parse(xhr.responseText);
+            console.log(response);
+            var table = '<table>';
+            for (var key in response) {
+              if (response.hasOwnProperty(key)) {
+                table += '<tr><td>' + key + '</td><td>' + response[key] + '</td></tr>';
+              }
+            }
+            table += '</table>';
+            document.body.innerHTML += table;
+          } else {
+            // If the request was unsuccessful, display an error message
+            alert('Request failed. Returned status of ' + xhr.status);
+          }
+        };
+        xhr.send(obj);
     }
 </script>
