@@ -12,6 +12,10 @@
       <td><input type="text" name="name" required></td>
     </tr>
     <tr>
+      <td>Password:</td>
+      <td><input type="text" name="password" required></td>
+    </tr>
+    <tr>
       <td>Email:</td>
       <td><input type="email" name="email" required></td>
     </tr>
@@ -31,11 +35,70 @@
   <input type="submit" value="Submit">
 </form>
 
+<h6>result: </h6>
+<p id="result"></P>
+
+# Get User
+<form action="https://csa-backend.rohanj.dev/api/steptrack1/getUser" method="post" id="formGetUser">
+  <table>
+    <tr>
+      <td>Email:</td>
+      <td><input type="email" name="email" required></td>
+    </tr>
+    <tr>
+      <td>Password:</td>
+      <td><input type="text" name="password" required></td>
+    </tr>
+  </table>
+  <input type="submit" value="Submit">
+</form>
+
+<h6>result: </h6>
+<div id="resultGetUser"></div>
+
+
+# Set Stats
+<form action="https://csa-backend.rohanj.dev/api/steptrack1/setStats" method="post" id="formSetStats">
+  <table>
+    <tr>
+      <td>Email:</td>
+      <td><input type="email" name="email" required></td>
+    </tr>
+    <tr>
+      <td>Password:</td>
+      <td><input type="text" name="password" required></td>
+    </tr>
+    <tr>
+      <td>Steps:</td>
+      <td><input type="number" name="steps" required></td>
+    </tr>
+    <tr>
+      <td>Calories:</td>
+      <td><input type="number" name="calories" required></td>
+    </tr>
+    <tr>
+      <td>Day:</td>
+      <td><input type="number" name="day" required></td>
+    </tr>
+    <tr>
+      <td>Month:</td>
+      <td><input type="number" name="month" required></td>
+    </tr>
+    <tr>
+      <td>Year:</td>
+      <td><input type="number" name="year" required></td>
+    </tr>
+  </table>
+  <input type="submit" value="Submit">
+</form>
+
+<h6>result: </h6>
+<div id="resultSetStats"></div>
+
 <script>
-    var form = document.getElementById("form")
-    form.onsubmit = (event) => {
-        event.preventDefault();
-        var obj = {};
+  function inputAsJson(id) {
+    var form = document.getElementById(id)
+      var obj = {};
         for (var i of Object.values(form.elements)) {
             if (i.type === "number") {
                 obj[i.name] = i.valueAsNumber;
@@ -44,6 +107,14 @@
             }
         }
         console.log(obj)
+        return obj;
+  }
+
+// createUser
+    var form = document.getElementById("form")
+    form.onsubmit = (event) => {
+        event.preventDefault();
+        var obj = inputAsJson("form");
 
         var xhr = new XMLHttpRequest();
         xhr.open('POST', 'https://csa-backend.rohanj.dev/api/steptrack1/createPerson', true);
@@ -51,8 +122,31 @@
         xhr.onload = function () {
           if (xhr.status === 201) {
             // If the request was successful, create an HTML table with the response data
-            var response = JSON.parse(xhr.responseText);
+            var response = xhr.responseText;
             console.log(response);
+            var result = document.getElementById("result");
+            result.innerHTML = response;
+          } else {
+            // If the request was unsuccessful, display an error message
+            alert('Request failed. Returned status of ' + xhr.status);
+          }
+        };
+        xhr.send(JSON.stringify(obj));
+    }
+
+// getUser
+    var getUser = document.getElementById("formGetUser")
+    getUser.onsubmit = (event) => {
+      event.preventDefault();
+      var obj = inputAsJson("formGetUser");
+      console.log(JSON.stringify(obj));
+      var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'https://csa-backend.rohanj.dev/api/steptrack1/getPerson');
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.onload = function () {
+          if (xhr.status === 200) {
+            var result = document.getElementById("resultGetUser");
+            var response = JSON.parse(xhr.responseText);
             var table = '<table>';
             for (var key in response) {
               if (response.hasOwnProperty(key)) {
@@ -60,12 +154,42 @@
               }
             }
             table += '</table>';
-            document.body.innerHTML += table;
+            result.body.innerHTML = table;
+          } else {
+            // If the request was unsuccessful, display an error message
+            console.log(xhr.status)
+          }
+        };
+        xhr.send(JSON.stringify(obj));
+    }
+
+    // setStats
+    var setStats = document.getElementById("formSetStats")
+    setStats.onsubmit = (event) => {
+        event.preventDefault();
+        var obj = inputAsJson("formSetStats");
+        console.log(JSON.stringify(obj));
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'https://csa-backend.rohanj.dev/api/steptrack1/setStats', true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.onload = function () {
+          if (xhr.status === 200) {
+            // If the request was successful, create an HTML table with the response data
+            var result = document.getElementById("resultSetStats");
+            var response = JSON.parse(xhr.responseText);
+            var table = '<table>';
+            for (var key in response) {
+              if (response.hasOwnProperty(key)) {
+                table += '<tr><td>' + key + '</td><td>' + response[key] + '</td></tr>';
+              }
+            }
+            table += '</table>';
+            result.body.innerHTML = table;
           } else {
             // If the request was unsuccessful, display an error message
             alert('Request failed. Returned status of ' + xhr.status);
           }
         };
-        xhr.send(obj);
+        xhr.send(JSON.stringify(obj));
     }
 </script>
