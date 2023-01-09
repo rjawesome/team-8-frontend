@@ -34,7 +34,7 @@
         };
     
     function getYearInfo() {
-        var url = "https://backend-csa.rohanj.dev/calendar1/yearInfo/" + document.getElementById("year1").innerHTML;
+        var url = "https://backend-csa.rohanj.dev/calendar1/yearInfo/" + document.getElementById("year1").value;
 
         fetch(url, options).then(response => {
 
@@ -57,7 +57,7 @@
         }
 
     function getDayInfo() {
-        var url = "https://backend-csa.rohanj.dev/calendar1/dayInfo/" + document.getElementById("day").innerHTML;
+        var url = "https://backend-csa.rohanj.dev/calendar1/dayInfo/" + document.getElementById("day").value;
 
         fetch(url, options).then(response => {
 
@@ -79,7 +79,7 @@
     }
 
     function getLeapYears() {
-        var url = "https://backend-csa.rohanj.dev/calendar1/leapYears/" + document.getElementById("year1").innerHTML + "/" + document.getElementById("year2").innerHTML;
+        var url = "https://backend-csa.rohanj.dev/calendar1/leapYears/" + document.getElementById("year1").value + "/" + document.getElementById("year2").value;
 
         fetch(url, options).then(response => {
 
@@ -101,7 +101,7 @@
     }
 
     function getYearFact() {
-        var url = "https://backend-csa.rohanj.dev/calendar2/" + document.getElementById("year1").innerHTML;
+        var url = "https://backend-csa.rohanj.dev/calendar2/" + document.getElementById("year1").value;
 
         fetch(url, options).then(response => {
 
