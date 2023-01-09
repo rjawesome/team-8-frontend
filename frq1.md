@@ -101,7 +101,7 @@
     }
 
     function getYearFact() {
-        var url = "https://csa-backend.rohanj.dev/api/calendar2/" + document.getElementById("year1").value;
+        var url = "https://csa-backend.rohanj.dev/api/calendar2/yearFact" + document.getElementById("year1").value;
 
         fetch(url, options).then(response => {
 
