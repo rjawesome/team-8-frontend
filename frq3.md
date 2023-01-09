@@ -20,6 +20,7 @@
 </table>
 
 <script>
+  // checks rohan juneja's api
   const API_URL = 'https://csa-backend.rohanj.dev/api/calculator1/calculate?expression=';
   document.getElementById('calculator-form').addEventListener('submit', (event) => {
     event.preventDefault();
