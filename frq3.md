@@ -8,6 +8,7 @@
 
 <br/>
 
+<h1>Calculator</h1>
 
 <table id="results-table">
   <tr>
@@ -19,12 +20,13 @@
 </table>
 
 <script>
+  // checks rohan juneja's api
   const API_URL = 'https://csa-backend.rohanj.dev/api/calculator1/calculate?expression=';
   document.getElementById('calculator-form').addEventListener('submit', (event) => {
     event.preventDefault();
     let expression = document.getElementById('expression-input').value;
     expression = expression.replace(/\^/g, 'POW');
-    fetch(`${API_URL}/${expression}`)
+    fetch(`${API_URL}expression=${expression}`)
       .then(response => response.json())
       .then(data => {
         const table = document.getElementById('results-table');
@@ -39,4 +41,19 @@
         resultCell.innerHTML = `<strong>${data.Result}</strong>`;
       });
   });
+</script>
+
+
+<h1>Calculator</h1>
+
+<input id="expression" type="text">
+<button id="submit">Get Result!</button>
+<p id="output"></p>
+
+<script>
+document.getElementById("submit").onclick = () => {
+	fetch("https://csa-backend.rohanj.dev/api/calculator1/calculate?expression=" + encodeURIComponent(document.getElementById("expression").value)).then(body => body.text()).then(body => {
+    document.getElementById("output").innerHTML = body;
+  })
+}
 </script>
