@@ -1,3 +1,3 @@
-## FRQ 4: Lightboard
+## FRQ 4: Light board
 
 <script> </script>
