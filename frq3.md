@@ -39,7 +39,7 @@ input[type=text] {
   border-radius: 4px;
 }
 
-input[type=submit] {
+input[id=submit-button] {
   background-color: #4CAF50; /* Green */
   border: none;
   color: white;
@@ -54,7 +54,7 @@ input[type=submit] {
   transition-duration: 0.4s;
 }
 
-input[type=submit]:hover {
+input[id=submit-button]:hover {
   box-shadow: 0 12px 16px 0 rgba(201,242,155),0 17px 50px 0 rgba(0,0,0,0.19)
 }
 
