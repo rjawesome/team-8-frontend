@@ -114,7 +114,7 @@
 <div id="resultSetStats"></div>
 
 # Get Stats
-<form action="https://csa-backend.rohanj.dev/api/steptrack1/getStats" method="post" id="formSetStats">
+<form action="https://csa-backend.rohanj.dev/api/steptrack1/getStats" method="post" id="formGetStats">
   <table>
     <tr>
       <td>Email:</td>
