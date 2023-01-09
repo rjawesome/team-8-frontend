@@ -44,6 +44,9 @@ input[type=text] {
   border: 2px solid green;
   border-radius: 4px;
 }
+.label {
+  color: lime;
+}
 
 </style>
 
