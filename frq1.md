@@ -34,7 +34,7 @@
         };
     
     function getYearInfo() {
-        var url = "https://backend-csa.rohanj.dev/calendar1/yearInfo/" + Document.getElementById("year1").innerHTML;
+        var url = "https://backend-csa.rohanj.dev/calendar1/yearInfo/" + document.getElementById("year1").innerHTML;
 
         fetch(url, options).then(response => {
 
@@ -57,7 +57,7 @@
         }
 
     function getDayInfo() {
-        var url = "https://backend-csa.rohanj.dev/calendar1/dayInfo/" + Document.getElementById("day").innerHTML;
+        var url = "https://backend-csa.rohanj.dev/calendar1/dayInfo/" + document.getElementById("day").innerHTML;
 
         fetch(url, options).then(response => {
 
@@ -74,12 +74,12 @@
         })
 
         .catch(err => {
-            Document.getElementById("result").innerHTML = "Error: " + err;
+            document.getElementById("result").innerHTML = "Error: " + err;
         })
     }
 
     function getLeapYears() {
-        var url = "https://backend-csa.rohanj.dev/calendar1/leapYears/" + Document.getElementById("year1").innerHTML + "/" + Document.getElementById("year2").innerHTML;
+        var url = "https://backend-csa.rohanj.dev/calendar1/leapYears/" + document.getElementById("year1").innerHTML + "/" + document.getElementById("year2").innerHTML;
 
         fetch(url, options).then(response => {
 
@@ -96,12 +96,12 @@
         })
 
         .catch(err => {
-            Document.getElementById("result").innerHTML = "Error: " + err;
+            document.getElementById("result").innerHTML = "Error: " + err;
         })
     }
 
     function getYearFact() {
-        var url = "https://backend-csa.rohanj.dev/calendar2/" + Document.getElementById("year1").innerHTML;
+        var url = "https://backend-csa.rohanj.dev/calendar2/" + document.getElementById("year1").innerHTML;
 
         fetch(url, options).then(response => {
 
@@ -118,7 +118,7 @@
         })
 
         .catch(err => {
-            Document.getElementById("result").innerHTML = "Error: " + err;
+            document.getElementById("result").innerHTML = "Error: " + err;
         })
     }
 </script>
