@@ -30,7 +30,7 @@
   box-shadow: 0 12px 16px 0 rgba(201,242,155),0 17px 50px 0 rgba(0,0,0,0.19)
 }
 
-input[type=text] {
+input[id=color] {
   border: 4px solid green;
   border-radius: 4px;
 }
