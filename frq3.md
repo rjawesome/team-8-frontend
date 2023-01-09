@@ -42,3 +42,18 @@
       });
   });
 </script>
+
+
+<h1>Calculator</h1>
+
+<input id="expression" type="text">
+<button id="submit">Get Result!</button>
+<p id="output"></p>
+
+<script>
+document.getElementById("submit").onclick = () => {
+	fetch("https://csa-backend.rohanj.dev/api/calculator1/calculate?expression=" + encodeURIComponent(document.getElementById("expression").value)).then(body => body.text()).then(body => {
+    document.getElementById("output").innerHTML = body;
+  })
+}
+</script>
