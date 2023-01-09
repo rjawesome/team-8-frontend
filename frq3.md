@@ -9,34 +9,16 @@
 <br/>
 
 
-<table id="results-table">
-  <tr>
-    <th>Expression</th>
-    <th>Tokens</th> 
-    <th>RPN</th>
-    <th> <strong> Answer </strong> </th>
-  </tr>
-</table>
+<h1>Calculator</h1>
+
+<input id="expression" type="text">
+<button id="submit">Get Result!</button>
+<p id="output"></p>
 
 <script>
-  const API_URL = 'https://csa-backend.rohanj.dev/api/calculator1/calculate?expression=';
-  document.getElementById('calculator-form').addEventListener('submit', (event) => {
-    event.preventDefault();
-    let expression = document.getElementById('expression-input').value;
-    expression = expression.replace(/\^/g, 'POW');
-    fetch(`${API_URL}/${expression}`)
-      .then(response => response.json())
-      .then(data => {
-        const table = document.getElementById('results-table');
-        const row = table.insertRow(-1);
-        const expressionCell = row.insertCell(0);
-        const tokensCell = row.insertCell(1);
-        const rpnCell = row.insertCell(2);
-        const resultCell = row.insertCell(3);
-        expressionCell.innerHTML = data.Expression;
-        tokensCell.innerHTML = data.Tokens;
-        rpnCell.innerHTML = data.RPN;
-        resultCell.innerHTML = `<strong>${data.Result}</strong>`;
-      });
-  });
+document.getElementById("submit").onclick = () => {
+	fetch("http://localhost:8085/api/calculator1/calculate?expression=" + encodeURIComponent(document.getElementById("expression").value)).then(body => body.text()).then(body => {
+    document.getElementById("output").innerHTML = body;
+  })
+}
 </script>
