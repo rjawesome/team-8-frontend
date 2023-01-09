@@ -1,5 +1,12 @@
 ## FRQ 3: Calculator
 
+<form id="calculator-form">
+  <label for="expression-input">Expression:</label><br>
+  <input type="text" id="expression-input" name="expression"><br>
+  <button type="submit" id="submit-button">Submit</button>
+</form> 
+<br/>
+
 <table id="results-table">
   <tr>
     <th>Expression</th>
