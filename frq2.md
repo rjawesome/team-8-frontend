@@ -221,7 +221,7 @@
         xhr.open('DELETE', 'https://csa-backend.rohanj.dev/api/steptrack1/deletePerson', true);
         xhr.setRequestHeader('Content-Type', 'application/json');
         
-        xhr.setRequestHeader('Access-Control-Allow-Methods', 'DELETE');
+        xhr.setRequestHeader('Access-Control-Allow-Methods', 'DELETE, POST');
         xhr.onload = function () {
           if (xhr.status === 200) {
             // If the request was successful, create an HTML table with the response data
