@@ -1,15 +1,5 @@
 ## FRQ 3: Calculator
 
-<form id="calculator-form">
-  <label for="expression-input">Expression:</label><br>
-  <input type="text" id="expression-input" name="expression"><br>
-  <button type="submit" id="submit-button">Submit</button>
-</form> 
-
-<br/>
-
-<h1>Calculator</h1>
-
 <table id="results-table">
   <tr>
     <th>Expression</th>
@@ -26,7 +16,7 @@
     event.preventDefault();
     let expression = document.getElementById('expression-input').value;
     expression = expression.replace(/\^/g, 'POW');
-    fetch(`${API_URL}expression=${expression}`)
+    fetch(`${API_URL}${encodeURIComponent(expression)}`)
       .then(response => response.json())
       .then(data => {
         const table = document.getElementById('results-table');
@@ -41,19 +31,4 @@
         resultCell.innerHTML = `<strong>${data.Result}</strong>`;
       });
   });
-</script>
-
-
-<h1>Calculator</h1>
-
-<input id="expression" type="text">
-<button id="submit">Get Result!</button>
-<p id="output"></p>
-
-<script>
-document.getElementById("submit").onclick = () => {
-	fetch("https://csa-backend.rohanj.dev/api/calculator1/calculate?expression=" + encodeURIComponent(document.getElementById("expression").value)).then(body => body.text()).then(body => {
-    document.getElementById("output").innerHTML = body;
-  })
-}
 </script>
