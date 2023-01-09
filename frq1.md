@@ -13,10 +13,10 @@
 
 <br><br>
 
-<button onclick="getYearInfo();">Get Year Info</button>
-<button onclick="getDayInfo();">Get Day Info</button>
-<button onclick="getLeapYears();">Find Number of Leap Years</button>
-<button onclick="getYearFact();">Get Year Fact</button>
+<button onclick="getYearInfo">Get Year Info</button>
+<button onclick="getDayInfo">Get Day Info</button>
+<button onclick="getLeapYears">Find Number of Leap Years</button>
+<button onclick="getYearFact">Get Year Fact</button>
 
 <label id="result"></label>
 
@@ -34,7 +34,7 @@
         };
     
     function getYearInfo() {
-        String url = "https://backend-csa.rohanj.dev/calendar1/yearInfo/" + Document.getElementById("year1").innerHTML;
+        var url = "https://backend-csa.rohanj.dev/calendar1/yearInfo/" + Document.getElementById("year1").innerHTML;
 
         fetch(url, options).then(response => {
 
