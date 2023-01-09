@@ -54,7 +54,7 @@
 </form>
 
 <h6>result: </h6>
-<p id="resultGetuser"></P>
+<div id="resultGetUser"></div>
 
 
 # Set Stats
@@ -70,30 +70,30 @@
     </tr>
     <tr>
       <td>Steps:</td>
-      <td><input type="text" name="steps" required></td>
+      <td><input type="number" name="steps" required></td>
     </tr>
     <tr>
       <td>Calories:</td>
-      <td><input type="text" name="calories" required></td>
+      <td><input type="number" name="calories" required></td>
     </tr>
     <tr>
       <td>Day:</td>
-      <td><input type="text" name="day" required></td>
+      <td><input type="number" name="day" required></td>
     </tr>
     <tr>
       <td>Month:</td>
-      <td><input type="text" name="month" required></td>
+      <td><input type="number" name="month" required></td>
     </tr>
     <tr>
       <td>Year:</td>
-      <td><input type="text" name="year" required></td>
+      <td><input type="number" name="year" required></td>
     </tr>
   </table>
   <input type="submit" value="Submit">
 </form>
 
 <h6>result: </h6>
-<p id="resultGetuser"></P>
+<div id="resultSetStats"></div>
 
 <script>
   function inputAsJson(id) {
@@ -145,11 +145,16 @@
         xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.onload = function () {
           if (xhr.status === 200) {
-            // If the request was successful, create an HTML table with the response data
-            var response = xhr.responseText;
-            console.log(response);
             var result = document.getElementById("resultGetUser");
-            result.innerHTML = response;
+            var response = JSON.parse(xhr.responseText);
+            var table = '<table>';
+            for (var key in response) {
+              if (response.hasOwnProperty(key)) {
+                table += '<tr><td>' + key + '</td><td>' + response[key] + '</td></tr>';
+              }
+            }
+            table += '</table>';
+            result.body.innerHTML = table;
           } else {
             // If the request was unsuccessful, display an error message
             console.log(xhr.status)
@@ -163,17 +168,23 @@
     setStats.onsubmit = (event) => {
         event.preventDefault();
         var obj = inputAsJson("formSetStats");
-
+        console.log(JSON.stringify(obj));
         var xhr = new XMLHttpRequest();
         xhr.open('POST', 'https://csa-backend.rohanj.dev/api/steptrack1/setStats', true);
         xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.onload = function () {
           if (xhr.status === 200) {
             // If the request was successful, create an HTML table with the response data
-            var response = xhr.responseText;
-            console.log(response);
-            var result = document.getElementById("result");
-            result.innerHTML = response;
+            var result = document.getElementById("resultSetStats");
+            var response = JSON.parse(xhr.responseText);
+            var table = '<table>';
+            for (var key in response) {
+              if (response.hasOwnProperty(key)) {
+                table += '<tr><td>' + key + '</td><td>' + response[key] + '</td></tr>';
+              }
+            }
+            table += '</table>';
+            result.body.innerHTML = table;
           } else {
             // If the request was unsuccessful, display an error message
             alert('Request failed. Returned status of ' + xhr.status);
