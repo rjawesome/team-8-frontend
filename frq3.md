@@ -1,15 +1,5 @@
 ## FRQ 3: Calculator
 
-<form id="calculator-form">
-  <label for="expression-input">Expression:</label><br>
-  <input type="text" id="expression-input" name="expression"><br>
-  <button type="submit" id="submit-button">Submit</button>
-</form> 
-
-<br/>
-
-<h1>Calculator</h1>
-
 <table id="results-table">
   <tr>
     <th>Expression</th>
@@ -26,7 +16,7 @@
     event.preventDefault();
     let expression = document.getElementById('expression-input').value;
     expression = expression.replace(/\^/g, 'POW');
-    fetch(`${API_URL}expression=${expression}`)
+    fetch(`${API_URL}${encodeURIComponent(expression)}`)
       .then(response => response.json())
       .then(data => {
         const table = document.getElementById('results-table');
