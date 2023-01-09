@@ -25,7 +25,7 @@
     event.preventDefault();
     let expression = document.getElementById('expression-input').value;
     expression = expression.replace(/\^/g, 'POW');
-    fetch(`${API_URL}/${expression}`)
+    fetch(`${API_URL}expression=${expression}`)
       .then(response => response.json())
       .then(data => {
         const table = document.getElementById('results-table');
