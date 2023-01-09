@@ -9,6 +9,7 @@
 - [ ] Get data for a person object: take in email, password and get out active steps, active days, average steps, days where each has year/month/day, steps, calories, distance traveled
 ## FRQ 3
 - [ ] Take in expression, give a result
+- [ ] Uses backend to generate answer
 ## FRQ 4
 - [ ] Backend generates random lightboard 6x6, display lights w/ colors (RGB), & display whether light is on/off AND whehter it evaluates to true/false
 - [ ] Same as above but for colored light (user supplies color name in)
