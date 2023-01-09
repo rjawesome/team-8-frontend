@@ -46,12 +46,12 @@
                     }
                 }
             table += '</table>';
-            document.body.innerHTML += table;
+            document.getElementById("result").innerHTML = table;
             })
         })
 
         .catch(err => {
-            Document.getElementById("result").innerHTML = "Error: " + err;
+            document.getElementById("result").innerHTML = "Error: " + err;
         })
 
         }
@@ -69,7 +69,7 @@
                     }
                 }
             table += '</table>';
-            document.body.innerHTML += table;
+            document.getElementById("result").innerHTML = table;
             })
         })
 
@@ -91,7 +91,7 @@
                     }
                 }
             table += '</table>';
-            document.body.innerHTML += table;
+           document.getElementById("result").innerHTML = table;
             })
         })
 
@@ -113,7 +113,7 @@
                     }
                 }
             table += '</table>';
-            document.body.innerHTML += table;
+            document.getElementById("result").innerHTML = table;
             })
         })
 
