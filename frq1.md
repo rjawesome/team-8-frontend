@@ -13,12 +13,34 @@
 
 <br><br>
 
-<button onclick="getYearInfo()">Get Year Info</button>
-<button onclick="getDayInfo()">Get Day Info</button>
-<button onclick="getLeapYears()">Find Number of Leap Years</button>
-<button onclick="getYearFact()">Get Year Fact</button>
+<button class="button button2" onclick="getYearInfo()">Get Year Info</button>
+<button class="button button2" onclick="getDayInfo()">Get Day Info</button>
+<button class="button button2" onclick="getLeapYears()">Find Number of Leap Years</button>
+<button class="button button2" onclick="getYearFact()">Get Year Fact</button>
 
 <label id="result"></label>
+
+<style>
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+  .button2:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+</style>
 
 <script>
 
