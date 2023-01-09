@@ -57,7 +57,7 @@
         }
 
     function getDayInfo() {
-        String url = "https://backend-csa.rohanj.dev/calendar1/dayInfo/" + Document.getElementById("day").innerHTML;
+        var url = "https://backend-csa.rohanj.dev/calendar1/dayInfo/" + Document.getElementById("day").innerHTML;
 
         fetch(url, options).then(response => {
 
@@ -79,7 +79,7 @@
     }
 
     function getLeapYears() {
-        String url = "https://backend-csa.rohanj.dev/calendar1/leapYears/" + Document.getElementById("year1").innerHTML + "/" + Document.getElementById("year2").innerHTML;
+        var url = "https://backend-csa.rohanj.dev/calendar1/leapYears/" + Document.getElementById("year1").innerHTML + "/" + Document.getElementById("year2").innerHTML;
 
         fetch(url, options).then(response => {
 
@@ -101,7 +101,7 @@
     }
 
     function getYearFact() {
-        String url = "https://backend-csa.rohanj.dev/calendar2/" + Document.getElementById("year1").innerHTML;
+        var url = "https://backend-csa.rohanj.dev/calendar2/" + Document.getElementById("year1").innerHTML;
 
         fetch(url, options).then(response => {
 
