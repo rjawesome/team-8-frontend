@@ -54,6 +54,10 @@ input[type=submit] {
   transition-duration: 0.4s;
 }
 
+input[type=submit]:hover {
+  box-shadow: 0 12px 16px 0 rgba(201,242,155),0 17px 50px 0 rgba(0,0,0,0.19)
+}
+
 .label {
   color: lime;
 }
