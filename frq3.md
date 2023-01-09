@@ -19,7 +19,7 @@
 </table>
 
 <script>
-  const API_URL = 'https://csa-backend.rohanj.dev/api/calculator1/calculate?';
+  const API_URL = 'https://csa-backend.rohanj.dev/api/calculator1/calculate?expression=';
   document.getElementById('calculator-form').addEventListener('submit', (event) => {
     event.preventDefault();
     let expression = document.getElementById('expression-input').value;
