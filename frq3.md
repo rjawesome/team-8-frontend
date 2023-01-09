@@ -8,16 +8,13 @@
 
 <br/>
 
-## History
-
-<button id="clear-button">Clear History</button>
 
 <table id="results-table">
   <tr>
     <th>Expression</th>
     <th>Tokens</th> 
     <th>RPN</th>
-    <th> <strong> Result </strong> </th>
+    <th> <strong> Answer </strong> </th>
   </tr>
 </table>
 
