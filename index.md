@@ -2,8 +2,8 @@
 
 Name | Github Profile| Role |
 | :---- | :---- | :---- 
-| Andrew Meng | [@supermengman](https://github.com/supermengman) | |
-| Nicolas Mounier | [@nicm2](https://github.com/nicm2) | |
-| Bailey Say | [@horizon-ab](https://github.com/horizon-ab) | |
-| Rohan Juneja | [@rjawesome](https://github.com/rjawesome) | |
-| Aarav Arora | [@aaravarora01](https://github.com/aaravarora01) | |
+| Andrew Meng | [@supermengman](https://github.com/supermengman) | Backend Developer |
+| Nicolas Mounier | [@nicm2](https://github.com/nicm2) | Frontend Developer|
+| Bailey Say | [@horizon-ab](https://github.com/horizon-ab) | Frontend Developer |
+| Rohan Juneja | [@rjawesome](https://github.com/rjawesome) | Goat |
+| Aarav Arora | [@aaravarora01](https://github.com/aaravarora01) | Backend Developer |
