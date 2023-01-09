@@ -2,13 +2,13 @@
 
 > API to get some information about a year
 
-<label for="fname">Year 1:</label>
+<label color="lime" for="fname">Year 1:</label>
 <input type="text" id="year1" name="year1"><br><br>
-<label for="lname">Year 2:</label>
+<label color="lime" for="lname">Year 2:</label>
 <input type="text" id="year2" name="year2"><br><br>
-<label for="fname">Month:</label>
+<label color="lime" for="fname">Month:</label>
 <input type="text" id="month" name="month"><br><br>
-<label for="lname">Day:</label>
+<label color="lime" for="lname">Day:</label>
 <input type="text" id="day" name="day"><br><br>
 
 <br><br>
