@@ -41,8 +41,8 @@
 }
 
 input[type=text] {
-  border: 6px solid green;
-  border-radius: 6px;
+  border: 5px solid lime;
+  border-radius: 5px;
 }
 .label {
   color: lime;
