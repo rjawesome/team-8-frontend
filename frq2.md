@@ -154,7 +154,7 @@
               }
             }
             table += '</table>';
-            result.body.innerHTML = table;
+            result.innerHTML = table;
           } else {
             // If the request was unsuccessful, display an error message
             console.log(xhr.status)
@@ -184,7 +184,7 @@
               }
             }
             table += '</table>';
-            result.body.innerHTML = table;
+            result.innerHTML = table;
           } else {
             // If the request was unsuccessful, display an error message
             alert('Request failed. Returned status of ' + xhr.status);
