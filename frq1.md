@@ -16,7 +16,7 @@
 <button onclick="getYearInfo()">Get Year Info</button>
 <button onclick="getDayInfo()">Get Day Info</button>
 <button onclick="getLeapYears()">Find Number of Leap Years</button>
-<button onclick="getYearFact()">Get Year Fact</button>
+<!-- <button onclick="getYearFact()">Get Year Fact</button> -->
 
 <label id="result"></label>
 
@@ -100,25 +100,25 @@
         })
     }
 
-    function getYearFact() {
-        var url = "https://csa-backend.rohanj.dev/api/calendar2/yearFact" + document.getElementById("year1").value;
+    // function getYearFact() {
+    //     var url = "https://csa-backend.rohanj.dev/api/calendar2/yearFact" + document.getElementById("year1").value;
 
-        fetch(url, options).then(response => {
+    //     fetch(url, options).then(response => {
 
-            response.json().then(data => {
-                var table = "<table>"
-                for (var key in data) {
-                if (data.hasOwnProperty(key)) {
-                    table += '<tr><td>' + key + '</td><td>' + data[key] + '</td></tr>';
-                    }
-                }
-            table += '</table>';
-            document.getElementById("result").innerHTML = table;
-            })
-        })
+    //         response.json().then(data => {
+    //             var table = "<table>"
+    //             for (var key in data) {
+    //             if (data.hasOwnProperty(key)) {
+    //                 table += '<tr><td>' + key + '</td><td>' + data[key] + '</td></tr>';
+    //                 }
+    //             }
+    //         table += '</table>';
+    //         document.getElementById("result").innerHTML = table;
+    //         })
+    //     })
 
-        .catch(err => {
-            document.getElementById("result").innerHTML = "Error: " + err;
-        })
-    }
+    //     .catch(err => {
+    //         document.getElementById("result").innerHTML = "Error: " + err;
+    //     })
+    // }
 </script>
