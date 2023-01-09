@@ -10,8 +10,6 @@
 <table id="results-table">
   <tr>
     <th>Expression</th>
-    <th>Tokens</th> 
-    <th>RPN</th>
     <th> <strong> Answer </strong> </th>
   </tr>
 </table>
@@ -29,13 +27,9 @@
         const table = document.getElementById('results-table');
         const row = table.insertRow(-1);
         const expressionCell = row.insertCell(0);
-        const tokensCell = row.insertCell(1);
-        const rpnCell = row.insertCell(2);
-        const resultCell = row.insertCell(3);
-        expressionCell.innerHTML = data.Expression;
-        tokensCell.innerHTML = data.Tokens;
-        rpnCell.innerHTML = data.RPN;
-        resultCell.innerHTML = `<strong>${data.Result}</strong>`;
+        const resultCell = row.insertCell(1);
+        expressionCell.innerHTML = expression;
+        resultCell.innerHTML = `<strong>${data}</strong>`;
       });
   });
 </script>
