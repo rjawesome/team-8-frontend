@@ -114,7 +114,7 @@
 <div id="resultSetStats"></div>
 
 # Get Stats
-<form action="https://csa-backend.rohanj.dev/api/steptrack1/getStats" method="post" id="formSetStats">
+<form action="https://csa-backend.rohanj.dev/api/steptrack1/getStats" method="post" id="formGetStats">
   <table>
     <tr>
       <td>Email:</td>
@@ -142,6 +142,66 @@
 
 <h6>result: </h6>
 <div id="resultSetStats"></div>
+
+<style>
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+  .button2:hover {
+  box-shadow: 0 12px 16px 0 rgba(201,242,155),0 17px 50px 0 rgba(0,0,0,0.19)
+}
+
+input[type=text] {
+  border: 4px solid green;
+  border-radius: 4px;
+}
+
+input[type=submit] {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+input[type=submit]:hover {
+  box-shadow: 0 12px 16px 0 rgba(201,242,155),0 17px 50px 0 rgba(0,0,0,0.19)
+}
+
+input[type=number] {
+  border: 4px solid green;
+  border-radius: 4px;
+}
+
+input[type=email] {
+  border: 4px solid green;
+  border-radius: 4px;
+}
+
+.label {
+  color: lime;
+}
+
+</style>
 
 <script>
   function inputAsJson(id) {
@@ -221,7 +281,7 @@
         xhr.open('DELETE', 'https://csa-backend.rohanj.dev/api/steptrack1/deletePerson', true);
         xhr.setRequestHeader('Content-Type', 'application/json');
         
-        xhr.setRequestHeader('Access-Control-Allow-Methods', 'DELETE');
+        xhr.setRequestHeader('Access-Control-Allow-Methods', 'DELETE, POST');
         xhr.onload = function () {
           if (xhr.status === 200) {
             // If the request was successful, create an HTML table with the response data
