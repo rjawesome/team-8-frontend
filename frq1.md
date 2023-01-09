@@ -13,10 +13,10 @@
 
 <br><br>
 
-<input type="button" onClick="getYearInfo();">Get Year Info</input>
-<input type="button" onClick="getDayInfo();">Get Day Info</input>
-<input type="button" onClick="getLeapYears();">Find Number of Leap Years</input>
-<input type="button" onClick="getYearFact();">Get Year Fact</input>
+<button onClick="getYearInfo();">Get Year Info</button>
+<button onClick="getDayInfo();">Get Day Info</button>
+<button onClick="getLeapYears();">Find Number of Leap Years</button>
+<button onClick="getYearFact();">Get Year Fact</button>
 
 <label id="result"></label>
 
