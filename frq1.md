@@ -57,7 +57,7 @@
         }
 
     function getDayInfo() {
-        var url = "https://csa-backend.rohanj.dev/api/calendar1/dayInfo/" + document.getElementById("day").value + "/" + document.getElementById("month").value + document.getElementById("year1").value;
+        var url = "https://csa-backend.rohanj.dev/api/calendar1/dayInfo/" + document.getElementById("day").value + "/" + document.getElementById("month").value + "/" + document.getElementById("year1").value;
 
         fetch(url, options).then(response => {
 
