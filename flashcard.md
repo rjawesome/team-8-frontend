@@ -1,7 +1,7 @@
 ## Flashcard
 
-<div class="flip-card">
-  <div class="flip-card-inner">
+<div class="flip-card" id="flipcard">
+  <div class="flip-card-inner" id="inner-flipcard">
     <div class="flip-card-front">
       Front
     </div>
@@ -12,6 +12,12 @@
     </div>
   </div>
 </div>
+
+<script>
+  document.getElementById("inner-flipcard").onclick = () => {
+    document.getElementById("inner-flipcard").classList.toggle("flipped")
+  }
+</script>
 
 <style>
  /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
@@ -34,7 +40,7 @@
 }
 
 /* Do an horizontal flip when you move the mouse over the flip box container */
-.flip-card:hover .flip-card-inner {
+.flipped {
   transform: rotateY(180deg);
 }
 
