@@ -17,4 +17,3 @@
     </table>
 </form>
 <h4>Don't have an account? Sign up <a href="/signup">here</a></h4>
-<h4><a href="/signup">here</h4>
