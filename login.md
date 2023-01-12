@@ -12,9 +12,8 @@
             <td><input type="text" name="password" required></td>
         </tr>
         <tr>
-            <input type="submit" value="Submit">
+            <td><input type="submit" value="Submit"></td>
         </tr>
     </table>
 </form>
-<h4>Don't have an account? Sign up </h4>
-<h4><a href="/signup">here</h4>
+<h4>Don't have an account? Sign up <a href="/signup">here</a></h4>
