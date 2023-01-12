@@ -16,3 +16,5 @@
         </tr>
     </table>
 </form>
+<h4>Don't have an account? Sign up </h4>
+<h4><a href="/signup">here</h4>
