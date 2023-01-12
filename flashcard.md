@@ -56,8 +56,8 @@
 
 /* Style both sides */
 .flip-card-front, .flip-card-back {
-  background-color: dodgerblue;
-  color: white;
+  background-color: rgba(250, 249, 246, 1);
+  color: black;
 }
 
 /* Style the back side */
