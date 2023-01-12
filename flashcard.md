@@ -12,10 +12,15 @@
     </div>
   </div>
 </div>
+<button class="answer-btn" style="display: none;">❌</button>
+<button class="answer-btn" style="display: none;">☑️</button>
 
 <script>
   document.getElementById("inner-flipcard").onclick = () => {
     document.getElementById("inner-flipcard").classList.toggle("flipped")
+    for (b of document.getElementsByClassName("answer-btn")) {
+      b.style.display = b.style.display === "none" ? "inline-block" : "none";
+    }
   }
 </script>
 
