@@ -12,7 +12,7 @@
             <td><input type="text" name="password" required></td>
         </tr>
         <tr>
-            <input type="submit" value="Submit">
+            <td><input type="submit" value="Submit"></td>
         </tr>
     </table>
 </form>
