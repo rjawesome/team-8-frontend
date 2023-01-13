@@ -1,6 +1,5 @@
-## Log In
+## Sign Up
 
-<!--No actions yet-->
 <form action="" method="post" id="form">
     <table>
         <tr>
@@ -12,8 +11,8 @@
             <td><input type="text" name="password" required></td>
         </tr>
         <tr>
-            <td><input type="submit" value="Submit"></td>
+            <td><input type="submit" value="Create"></td>
         </tr>
     </table>
 </form>
-<h4>Don't have an account? Sign up <a href="/signup">here</a></h4>
+<h4>Have an account? <a href="/login">Login</a></h4>
