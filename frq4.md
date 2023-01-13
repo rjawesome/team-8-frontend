@@ -108,7 +108,7 @@ input[id=color] {
                 displayLight.style.height = "100px";
                 
                 displayLight.style.float = "left";
-                if (lightData.light.on === false) displayLight.style.visibility = 'hidden';
+                if (lightData.light.on === false) displayLight.style.visibility = 'hidden' ;
                 if (lightData.column === 5) {
                     result.append(displayLight);
                     var placeholder = displayLight.cloneNode(true);
