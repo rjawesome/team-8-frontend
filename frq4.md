@@ -108,6 +108,7 @@ input[id=color] {
                 displayLight.style.height = "100px";
                 
                 displayLight.style.float = "left";
+                if (lightData.light.on === false) displayLight.style.backgroundColor = 'black';
                 if (lightData.column === 5) {
                     result.append(displayLight);
                     var placeholder = displayLight.cloneNode(true);
