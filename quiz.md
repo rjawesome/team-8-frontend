@@ -33,3 +33,144 @@
           </li>
       </ul>
   </li>
+  <li>
+      <h4>How many states are there in America?</h4>
+      <ul class="choices">
+          <li>
+              <label
+                  ><input type="radio" name="question1" value="A" /><span
+                      >48</span
+                  ></label
+              >
+          </li>
+          <li>
+              <label
+                  ><input type="radio" name="question1" value="B" /><span
+                      >50</span
+                  ></label
+              >
+          </li>
+          <li>
+              <label
+                  ><input type="radio" name="question1" value="C" /><span
+                      >52</span
+                  ></label
+              >
+          </li>
+          <li>
+              <label
+                  ><input type="radio" name="question1" value="D" /><span
+                      >60</span
+                  ></label
+              >
+          </li>
+      </ul>
+  </li>
+  <li>
+      <h4>What year did World War II end?</h4>
+      <ul class="choices">
+          <li>
+              <label
+                  ><input type="radio" name="question2" value="A" /><span
+                      >1896</span
+                  ></label
+              >
+          </li>
+          <li>
+              <label
+                  ><input type="radio" name="question2" value="B" /><span
+                      >1918</span
+                  ></label
+              >
+          </li>
+          <li>
+              <label
+                  ><input type="radio" name="question2" value="C" /><span
+                      >1942</span
+                  ></label
+              >
+          </li>
+          <li>
+              <label
+                  ><input type="radio" name="question2" value="D" /><span
+                      >1945</span
+                  ></label
+              >
+          </li>
+      </ul>
+  </li>
+</ul>
+<button class="view-results" onclick="returnScore()">Check</button>
+<span id="myresults" class="my-results">Your score is -/3</span>
+
+<style> 
+html {
+    box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+body {
+    font-family: sans-serif;
+    padding: 1rem;
+    background-color: orange;
+}
+.quiz,
+.choices {
+    list-style-type: none;
+    padding: 0;
+}
+.choices li {
+    margin-bottom: 5px;
+}
+.choices label {
+    display: flex;
+    align-items: center;
+}
+.choices label,
+input[type="radio"] {
+    cursor: pointer;
+}
+input[type="radio"] {
+    margin-right: 8px;
+}
+.view-results {
+    padding: 1rem;
+    cursor: pointer;
+    font-size: inherit;
+    color: white;
+    background: teal;
+    border-radius: 8px;
+    margin-right: 5px;
+}
+.my-results {
+    padding: 1rem;
+    border: 1px solid goldenrod;
+}
+</style>
+
+<script>
+  // Answer sheet
+var answers = ["C", "B", "D"],
+    tot = answers.length;
+function getCheckedValue(radioName) {
+    var radios = document.getElementsByName(radioName);
+    for (var y = 0; y < radios.length; y++)
+        if (radios[y].checked) return radios[y].value;
+}
+function getScore() {
+    var score = 0;
+    for (var i = 0; i < tot; i++)
+        if (getCheckedValue("question" + i) === answers[i]) score += 1;
+    return score;
+}
+function returnScore() {
+    document.getElementById("myresults").innerHTML =
+        "Your score is " + getScore() + "/" + tot;
+    if (getScore() > 2) {
+        console.log("Bravo");
+    }
+}
+</script>
