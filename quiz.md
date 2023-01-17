@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="{{ '/assets/css/quiz.css?v=' | append: site.github.build_revision | relative_url }}">
+
 <h2>Practice Quiz</h2>
 <ul class="quiz">
   <li>
@@ -102,57 +104,6 @@
 </ul>
 <button class="view-results" onclick="returnScore()">Check</button>
 <span id="myresults" class="my-results">Your score is -/3</span>
-
-<style> 
-html {
-    box-sizing: border-box;
-}
-*,
-*:before,
-*:after {
-    box-sizing: inherit;
-}
-ul li {
- list-style-image: none;
-}
-body {
-    font-family: sans-serif;
-    padding: 1rem;
-    background-color: orange;
-}
-.quiz,
-.choices {
-    list-style-type: none;
-    padding: 0;
-}
-.choices li {
-    margin-bottom: 5px;
-}
-.choices label {
-    display: flex;
-    align-items: center;
-}
-.choices label,
-input[type="radio"] {
-    cursor: pointer;
-}
-input[type="radio"] {
-    margin-right: 8px;
-}
-.view-results {
-    padding: 1rem;
-    cursor: pointer;
-    font-size: inherit;
-    color: white;
-    background: teal;
-    border-radius: 8px;
-    margin-right: 5px;
-}
-.my-results {
-    padding: 1rem;
-    border: 1px solid goldenrod;
-}
-</style>
 
 <script>
   // Answer sheet
