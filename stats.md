@@ -54,10 +54,19 @@
           <div style="height: 26px"></div>
         <div class="card shadow-sm">
           <div class="card-header bg-transparent border-0">
-            <h3 class="mb-0"><i class="far fa-clone pr-1"></i>Other Information</h3>
+            <h3 class="mb-0"><i class="far fa-clone pr-1"></i>Most Missed Card</h3>
           </div>
           <div class="card-body pt-0">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <div class="flip-card" id="flipcard">
+                <div class="flip-card-inner" id="inner-flipcard" onclick="flipCard()">
+                <div class="flip-card-front">
+                    Constructor
+                </div>
+                <div class="flip-card-back">
+                The first method that runs in a class before any other method. Allows for the initialization and declaration of variables so that way the variables can be used in the project
+                </div>
+                </div>
+                </div>
           </div>
         </div>
       </div>
