@@ -1,7 +1,7 @@
 <h2>Practice Quiz</h2>
 <ul class="quiz">
   <li>
-      <h4>Which of the following is not a Java features?</h4>
+      <h4>Which of the following is not a Java feature?</h4>
       <ul class="choices">
           <li>
               <label
