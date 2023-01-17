@@ -112,6 +112,9 @@ html {
 *:after {
     box-sizing: inherit;
 }
+ul li {
+ list-style-image: none;
+}
 body {
     font-family: sans-serif;
     padding: 1rem;
