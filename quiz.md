@@ -1,33 +1,33 @@
 <h2>Practice Quiz</h2>
 <ul class="quiz">
   <li>
-      <h4>How many bones are in the human body?</h4>
+      <h4>Which of the following is not a Java features?</h4>
       <ul class="choices">
           <li>
               <label
                   ><input type="radio" name="question0" value="A" /><span
-                      >96</span
+                      >Dynamic</span
                   ></label
               >
           </li>
           <li>
               <label
                   ><input type="radio" name="question0" value="B" /><span
-                      >193</span
+                      >Architecture Neutral</span
                   ></label
               >
           </li>
           <li>
               <label
                   ><input type="radio" name="question0" value="C" /><span
-                      >206</span
+                      >Use of pointers</span
                   ></label
               >
           </li>
           <li>
               <label
                   ><input type="radio" name="question0" value="D" /><span
-                      >309</span
+                      >Object-oriented</span
                   ></label
               >
           </li>
