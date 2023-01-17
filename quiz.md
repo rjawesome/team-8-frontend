@@ -3,99 +3,99 @@
 <h2>Practice Quiz</h2>
 <ul class="quiz">
   <li>
-      <h4>Which of the following is not a Java feature?</h4>
+      <h4>Which term matches this definiton: The first method that runs in a class before any other method. Allows for the initialization and declaration of variables so that way the variables can be used in the project?</h4>
       <ul class="choices">
           <li>
               <label
                   ><input type="radio" name="question0" value="A" /><span
-                      >Dynamic</span
+                      >Class</span
                   ></label
               >
           </li>
           <li>
               <label
                   ><input type="radio" name="question0" value="B" /><span
-                      >Architecture Neutral</span
+                      >Control Structure</span
                   ></label
               >
           </li>
           <li>
               <label
                   ><input type="radio" name="question0" value="C" /><span
-                      >Use of pointers</span
+                      >Constructor</span
                   ></label
               >
           </li>
           <li>
               <label
                   ><input type="radio" name="question0" value="D" /><span
-                      >Object-oriented</span
+                      >Abstract Class</span
                   ></label
               >
           </li>
       </ul>
   </li>
   <li>
-      <h4>How many states are there in America?</h4>
+      <h4>Which term matches the type of iteration that continuously runs until the condition(s) are no longer met?</h4>
       <ul class="choices">
           <li>
               <label
                   ><input type="radio" name="question1" value="A" /><span
-                      >48</span
+                      >if</span
                   ></label
               >
           </li>
           <li>
               <label
                   ><input type="radio" name="question1" value="B" /><span
-                      >50</span
+                      >while</span
                   ></label
               >
           </li>
           <li>
               <label
                   ><input type="radio" name="question1" value="C" /><span
-                      >52</span
+                      >for</span
                   ></label
               >
           </li>
           <li>
               <label
                   ><input type="radio" name="question1" value="D" /><span
-                      >60</span
+                      >else</span
                   ></label
               >
           </li>
       </ul>
   </li>
   <li>
-      <h4>What year did World War II end?</h4>
+      <h4>Match this definition with the primitive data type it is most similar to: used to represent a single true/false value</h4>
       <ul class="choices">
           <li>
               <label
                   ><input type="radio" name="question2" value="A" /><span
-                      >1896</span
+                      >double</span
                   ></label
               >
           </li>
           <li>
               <label
                   ><input type="radio" name="question2" value="B" /><span
-                      >1918</span
+                      >int</span
                   ></label
               >
           </li>
           <li>
               <label
                   ><input type="radio" name="question2" value="C" /><span
-                      >1942</span
+                      >float</span
                   ></label
               >
           </li>
           <li>
               <label
                   ><input type="radio" name="question2" value="D" /><span
-                      >1945</span
+                      >boolean</span
                   ></label
               >
           </li>
