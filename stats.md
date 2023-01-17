@@ -24,29 +24,29 @@
           <div class="card-body pt-0">
             <table class="table table-bordered">
               <tr>
-                <th width="30%">Roll</th>
+                <th width="30%">Previous Score</th>
                 <td width="2%">:</td>
-                <td>125</td>
+                <td>17/23</td>
               </tr>
               <tr>
-                <th width="30%">Academic Year	</th>
+                <th width="30%">High Score</th>
                 <td width="2%">:</td>
-                <td>2020</td>
+                <td>21/23</td>
               </tr>
               <tr>
-                <th width="30%">Gender</th>
+                <th width="30%">Most Missed</th>
                 <td width="2%">:</td>
-                <td>Male</td>
+                <td>Constructor</td>
               </tr>
               <tr>
-                <th width="30%">Religion</th>
+                <th width="30%">Most Correct</th>
                 <td width="2%">:</td>
-                <td>Group</td>
+                <td>Class</td>
               </tr>
               <tr>
-                <th width="30%">blood</th>
+                <th width="30%">Time</th>
                 <td width="2%">:</td>
-                <td>B+</td>
+                <td>3:23</td>
               </tr>
             </table>
           </div>
