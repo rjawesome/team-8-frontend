@@ -1,7 +1,7 @@
 ## Statistics
 
 <!--No actions yet-->
-<div class="student-profile py-4">
+<div class="stats">
   <div class="container">
     <div class="row">
       <div class="col-lg-4">
