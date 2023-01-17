@@ -7,13 +7,12 @@
       <div class="col-lg-4">
         <div class="card shadow-sm">
           <div class="card-header bg-transparent text-center">
-            <img class="profile_img" src="https://source.unsplash.com/600x300/?student" alt="student dp">
-            <h3>Ishmam Ahasan Samin</h3>
+            <h3>Card Set #1</h3>
           </div>
           <div class="card-body">
-            <p class="mb-0"><strong class="pr-1">Student ID:</strong>321000001</p>
-            <p class="mb-0"><strong class="pr-1">Class:</strong>4</p>
-            <p class="mb-0"><strong class="pr-1">Section:</strong>A</p>
+            <p class="mb-0"><strong class="pr-1">Number of Terms:</strong>23</p>
+            <p class="mb-0"><strong class="pr-1">Date Completed:</strong>1/17/23</p>
+            <p class="mb-0"><strong class="pr-1">Subject: Computer Science:</strong>A</p>
           </div>
         </div>
       </div>
