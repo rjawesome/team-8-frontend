@@ -1,7 +1,3 @@
-body {
-background-color: #FFFFFF;
-}
-
 <h2>Practice Quiz</h2>
 <ul class="quiz">
   <li>
