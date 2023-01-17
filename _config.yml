@@ -1,7 +1,7 @@
 remote_theme: pages-themes/hacker@v0.2.0
 plugins:
 - jekyll-remote-theme
-title: "Team 8 FRQ Frontend"
-description: "Team 8 from Period 2 CSA showcasing the four FRQs created"
+title: "Code Cards"
+description: "Study tool for programming with flashcards, quizzes, and more!"
 gitorg: "https://github.com/rjawesome/team-8-frontend"
 google_analytics:
