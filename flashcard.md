@@ -8,7 +8,7 @@
       Constructor
     </div>
     <div class="flip-card-back">
-      The first method that runs in a class before any other method. Allows for the initialization and declaration of variables so that way the variables can be used in the project
+      a person or company that builds, designs, or makes something.
     </div>
   </div>
 </div>
