@@ -13,6 +13,7 @@
             <p class="mb-0"><strong class="pr-1">Number of Terms:</strong>23</p>
             <p class="mb-0"><strong class="pr-1">Date Completed:</strong>1/17/23</p>
             <p class="mb-0"><strong class="pr-1">Subject: </strong>CS</p>
+            <p class="mb-0"><button type="button" id="retry-button">Retry</button></p>
           </div>
         </div>
       </div>
