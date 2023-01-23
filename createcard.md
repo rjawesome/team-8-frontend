@@ -19,7 +19,11 @@
       </tbody>
     </table>
   </div>
-  <button type="button" id="add-card-button">Add Card</button>
+  <button type="button" id="add-card-button">Add Card</button><br>
+  <label>Class:
+    <input type="text" id="set-class" name="set-class">
+  </label><br>
+  <input type="checkbox" id="public-check" name="public-check">Public
   <button type="button" id="submit-card-button">Submit</button>
 </form>
 
@@ -28,7 +32,8 @@
   const flashcardForm = document.getElementById("flashcard-form");
   const addCardButton = document.getElementById("add-card-button");
   const submitButton = document.getElementById("submit-card-button");
-
+  const publicCheck = document.getElementById("public-check");
+  const setClass = document.getElementById("set-class");
   let flashcardCount = 1;
 
   addCardButton.addEventListener("click", function() {
@@ -63,6 +68,7 @@
       const definition = document.getElementById(`definition-${i}`).value;
       flashcards.push({ term, definition });
     }
+    flashcards.push({ setInfo: { public: publicCheck.checked, class: setClass.value }});
     const flashcardsJson = JSON.stringify(flashcards);
     console.log(flashcardsJson);
   });
