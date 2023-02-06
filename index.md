@@ -1,6 +1,8 @@
 ## Code Cards Home
 
-
+<img src="assets/img/logo2.png"
+     alt="logo"
+     style="float: left; margin-right: 10px;" />
 
 | Name | Github Profile | Role |
 | :---- | :---- | :---- |
