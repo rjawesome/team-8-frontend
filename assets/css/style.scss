@@ -10,7 +10,10 @@
     display: flex;
   }
   
-body {background-color: lightgray}
+body {
+  background-color: lightgray;
+  padding-left: 20px; 
+}
 
 h2 {
   color: green 
