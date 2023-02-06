@@ -64,15 +64,34 @@
 
   submitButton.addEventListener("click", function() {
     event.preventDefault();
-    const flashcardSet = [];
     const flashcards = [];
     for (let i = 0; i < flashcardCount; i++) {
       const term = document.getElementById(`term-${i}`).value;
       const definition = document.getElementById(`definition-${i}`).value;
-      flashcardSet.push({ front: term, back: definition });
+      flashcards.push({ front: term, back: definition });
     }
-    flashcards.push({ email: "rohanj2006@gmail.com", password: "password", name: document.getElementById("setName").value, isPublic: publicCheck.checked, flashcards: flashcardSet});
-    const flashcardsJson = JSON.stringify(flashcards);
+    const flashcardSet = { email: "rohanj2006@gmail.com", password: "password", name: document.getElementById("setName").value, isPublic: publicCheck.checked, flashcards};
+    const flashcardsJson = JSON.stringify(flashcardSet);
     console.log(flashcardsJson);
+
+    var url = "https://csa-backend.rohanj.dev/api/flashcard/createFlashcardSet";
+    const options = {
+            method: 'POST', // *GET, POST, PUT, DELETE, etc.
+            headers: {
+            'Content-Type': 'application/json'
+            // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: flashcardsJson // body data type must match "Content-Type" header
+        };
+        fetch(url, options).then(response => {
+
+            response.text().then(data => {
+                console.log(data);
+            })
+        })
+
+        .catch(err => {
+            console.log("Error: " + err);
+        })
   });
 </script>
