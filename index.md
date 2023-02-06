@@ -1,6 +1,6 @@
 ## Code Cards Home
 
-<img src="assets/img/logo2.png"
+<img src="assets/img/logo3.png"
      alt="logo"
      style="float: left; margin-right: 10px; size:20%" />
 
