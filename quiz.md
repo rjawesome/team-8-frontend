@@ -35,77 +35,12 @@
           </li>
       </ul>
   </li>
-  <li>
-      <h4>Which term matches the type of iteration that continuously runs until the condition(s) are no longer met?</h4>
-      <ul class="choices">
-          <li>
-              <label
-                  ><input type="radio" name="question1" value="A" /><span
-                      >if</span
-                  ></label
-              >
-          </li>
-          <li>
-              <label
-                  ><input type="radio" name="question1" value="B" /><span
-                      >while</span
-                  ></label
-              >
-          </li>
-          <li>
-              <label
-                  ><input type="radio" name="question1" value="C" /><span
-                      >for</span
-                  ></label
-              >
-          </li>
-          <li>
-              <label
-                  ><input type="radio" name="question1" value="D" /><span
-                      >else</span
-                  ></label
-              >
-          </li>
-      </ul>
-  </li>
-  <li>
-      <h4>Match this definition with the primitive data type it is most similar to: used to represent a single true/false value</h4>
-      <ul class="choices">
-          <li>
-              <label
-                  ><input type="radio" name="question2" value="A" /><span
-                      >double</span
-                  ></label
-              >
-          </li>
-          <li>
-              <label
-                  ><input type="radio" name="question2" value="B" /><span
-                      >int</span
-                  ></label
-              >
-          </li>
-          <li>
-              <label
-                  ><input type="radio" name="question2" value="C" /><span
-                      >float</span
-                  ></label
-              >
-          </li>
-          <li>
-              <label
-                  ><input type="radio" name="question2" value="D" /><span
-                      >boolean</span
-                  ></label
-              >
-          </li>
-      </ul>
-  </li>
 </ul>
 <button class="view-results" onclick="returnScore()">Check</button>
 <span id="myresults" class="my-results">Your score is -/3</span>
 
 <script>
+const ID = 20; // will be inputted by user later
   // Answer sheet
 var answers = ["C", "B", "D"],
     tot = answers.length;
