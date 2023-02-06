@@ -2,39 +2,7 @@
 
 <h2>Practice Quiz</h2>
 <ul class="quiz" id="quiz">
-  <li>
-      <h4>Which term matches this definiton: The first method that runs in a class before any other method. Allows for the initialization and declaration of variables so that way the variables can be used in the project?</h4>
-      <ul class="choices">
-          <li>
-              <label
-                  ><input type="radio" name="question0" value="A" /><span
-                      >Class</span
-                  ></label
-              >
-          </li>
-          <li>
-              <label
-                  ><input type="radio" name="question0" value="B" /><span
-                      >Control Structure</span
-                  ></label
-              >
-          </li>
-          <li>
-              <label
-                  ><input type="radio" name="question0" value="C" /><span
-                      >Constructor</span
-                  ></label
-              >
-          </li>
-          <li>
-              <label
-                  ><input type="radio" name="question0" value="D" /><span
-                      >Abstract Class</span
-                  ></label
-              >
-          </li>
-      </ul>
-  </li>
+
 </ul>
 <button class="view-results" onclick="returnScore()">Check</button>
 <span id="myresults" class="my-results">Your score is -/3</span>
