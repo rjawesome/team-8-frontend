@@ -10,6 +10,8 @@
     display: flex;
   }
   
+body {background-color: grey}
+
   /* "column style" is one-third of the width with padding */
   .column {
     flex: 33.33%;
@@ -86,6 +88,3 @@
   .label {
     color: lime;
   }
-
-  
-
