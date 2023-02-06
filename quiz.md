@@ -68,7 +68,7 @@ function getScore() {
 }
 function returnScore() {
     document.getElementById("myresults").innerHTML =
-        "Your score is " + getScore() + "/" + tot;
+        "Your score is " + getScore() + "/" + answers.length;
     if (getScore() > 2) {
         console.log("Bravo");
     }
