@@ -1,7 +1,9 @@
 ## Log In
 
 <!--No actions yet-->
-<form action="" method="post" id="form">
+
+<!--Replace post with csa-backend.rohanj.dev/authenticate later, testing with localhost for now-->
+<form action="localhost:8085/api/jwt/authenticate" method="post" id="form" autocomplete="on">
     <table>
         <tr>
             <td>Email:</td>
