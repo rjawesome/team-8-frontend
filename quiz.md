@@ -41,7 +41,7 @@
 
 <script>
 const ID = 20; // will be inputted by user later
-var answers = [],
+var answers = [];
 
 fetch("https://csa-backend.rohanj.dev/api/flashcards/getFlashcardMC",
   { 
@@ -80,7 +80,7 @@ fetch("https://csa-backend.rohanj.dev/api/flashcards/getFlashcardMC",
 
     document.getElementByID("quiz").appendChild(container)
 
-    answers = [..answers, "1"]
+    answers = [...answers, "1"]
     qNum++
   })
 })
