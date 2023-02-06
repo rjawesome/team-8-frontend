@@ -45,6 +45,8 @@ fetch("https://csa-backend.rohanj.dev/api/flashcard/getFlashcardSetMC",
       li.appendChild(label);
       choices.appendChild(li);
     })
+    
+    container.appendChild(choices)
 
     document.getElementById("quiz").appendChild(container)
 
