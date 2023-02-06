@@ -2,21 +2,28 @@
 This HTML is setup as a fragment allowing it to be "included" by other HTML files via Jinja2
 -->
 <style>
-  .navbar {
+header {
+    background-color: #333;
+    color: #fff;
+    height: 60px;
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    background-color: green;
-    padding: 10px;
+    padding: 0 20px;
   }
   
-  .navbar a {
-    color: white;
+  nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav a {
+    color: #fff;
     text-decoration: none;
-    padding: 10px 20px;
-  }
-  
-  .navbar a:hover {
-    background-color: grey;
+    padding: 20px;
+    font-size: 16px;
   }
   
 
