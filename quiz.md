@@ -11,7 +11,7 @@
 const ID = 20; // will be inputted by user later
 var answers = [];
 
-fetch("https://csa-backend.rohanj.dev/api/flashcards/getFlashcardSetMC",
+fetch("https://csa-backend.rohanj.dev/api/flashcard/getFlashcardSetMC",
   { 
     method: 'POST',  
     headers: {
