@@ -1,4 +1,4 @@
-<h1>Flashcard Search</h1>
+<h2>Flashcard Search</h2>
   <form>
     <label for="search-bar">Search for Flashcard Sets:</label>
     <input type="text" id="search-bar" name="search-bar">
