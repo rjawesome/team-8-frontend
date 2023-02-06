@@ -3,6 +3,8 @@
 <div id="flashcard-container"></div>
 
 <form id="flashcard-form">
+  <label for="setName">Set Name:</label>
+  <input type="text" id="setName" name = "setName">
   <div id="flashcard-inputs-0" class="card-input">
     <table>
       <thead>
@@ -19,7 +21,11 @@
       </tbody>
     </table>
   </div>
-  <button type="button" id="add-card-button">Add Card</button>
+  <button type="button" id="add-card-button">Add Card</button><br>
+  <label>Class:
+    <input type="text" id="set-class" name="set-class">
+  </label><br>
+  <input type="checkbox" id="public-check" name="public-check">Public
   <button type="button" id="submit-card-button">Submit</button>
 </form>
 
@@ -28,7 +34,8 @@
   const flashcardForm = document.getElementById("flashcard-form");
   const addCardButton = document.getElementById("add-card-button");
   const submitButton = document.getElementById("submit-card-button");
-
+  const publicCheck = document.getElementById("public-check");
+  const setClass = document.getElementById("set-class");
   let flashcardCount = 1;
 
   addCardButton.addEventListener("click", function() {
@@ -57,12 +64,14 @@
 
   submitButton.addEventListener("click", function() {
     event.preventDefault();
+    const flashcardSet = [];
     const flashcards = [];
     for (let i = 0; i < flashcardCount; i++) {
       const term = document.getElementById(`term-${i}`).value;
       const definition = document.getElementById(`definition-${i}`).value;
-      flashcards.push({ term, definition });
+      flashcardSet.push({ front: term, back: definition });
     }
+    flashcards.push({ email: "rohanj2006@gmail.com", password: "password", name: document.getElementById("setName").value, isPublic: publicCheck.checked, flashcards: flashcardSet});
     const flashcardsJson = JSON.stringify(flashcards);
     console.log(flashcardsJson);
   });

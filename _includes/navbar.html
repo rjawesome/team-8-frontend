@@ -1,0 +1,51 @@
+<!-- Navigation Bar from bootstrap
+This HTML is setup as a fragment allowing it to be "included" by other HTML files via Jinja2
+-->
+<style>
+header {
+    background-color: #333;
+    color: #fff;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    border-radius: 15px;
+  }
+  
+  nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 40px;
+    font-size: 16px;
+  }
+  
+
+</style>
+
+<header>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/flashcard">Flashcard</a></li>
+        <li><a href="/quiz">Quiz</a></li>
+        <li><a href="/login">Login</a></li>
+        <li><a href="/createcard">Create Set</a></li>
+        <li><a href="/stats">Stats</a></li>
+        <li><a href="/search">Search</a></li>
+        <!-- <td><a href="plan">Plan</a></td> -->
+        <!-- <td><a href="/frq1">FRQ 1</a></td>
+        <td><a href="/frq2">FRQ 2</a></td>
+        <td><a href="/frq3">FRQ 3</a></td>
+        <td><a href="/frq4">FRQ 4</a></td> -->
+      </ul>
+    </nav>
+  </header>
+  
