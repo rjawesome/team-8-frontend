@@ -11,7 +11,7 @@
 const ID = 20; // will be inputted by user later
 var answers = [];
 
-fetch("https://csa-backend.rohanj.dev/api/flashcards/getFlashcardMC",
+fetch("https://csa-backend.rohanj.dev/api/flashcard/getFlashcardSetMC",
   { 
     method: 'POST',  
     headers: {
@@ -21,7 +21,7 @@ fetch("https://csa-backend.rohanj.dev/api/flashcards/getFlashcardMC",
   }
 ).then(data => data.json())
 .then(data => {
-  const qNum = 0;
+  var qNum = 0;
   Object.keys(data).forEach(q => {
     const container = document.createElement("li")
     const qElem = document.createElement("h4")
@@ -45,8 +45,10 @@ fetch("https://csa-backend.rohanj.dev/api/flashcards/getFlashcardMC",
       li.appendChild(label);
       choices.appendChild(li);
     })
+    
+    container.appendChild(choices)
 
-    document.getElementByID("quiz").appendChild(container)
+    document.getElementById("quiz").appendChild(container)
 
     answers = [...answers, "1"]
     qNum++
@@ -66,7 +68,7 @@ function getScore() {
 }
 function returnScore() {
     document.getElementById("myresults").innerHTML =
-        "Your score is " + getScore() + "/" + tot;
+        "Your score is " + getScore() + "/" + answers.length;
     if (getScore() > 2) {
         console.log("Bravo");
     }
