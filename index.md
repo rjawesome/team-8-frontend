@@ -19,10 +19,6 @@
 }
 </style>
 
-<img src="assets/img/logo4.png"
-     alt="logo"
-     style="float: left; margin-right: 10px; size:20%" />
-
 <div class="row">
   <div class="column">
      <p>Code Cards is a comprehensive online platform designed to help students study and improve their knowledge in a wide range of school subjects. Our platform utilizes an innovative approach to learning by incorporating flashcards and quizzes to make studying easier and more engaging.
@@ -33,7 +29,7 @@ In addition to flashcards, our platform also includes quizzes to test studentsâ€
 </p>
   </div>
   <div class="column">
-    <img src="assets/img/logo3.png"
+    <img src="assets/img/logo5.png"
      alt="logo"
      style="float: left; margin-right: 10px; size:20%" />
   </div>
@@ -46,7 +42,7 @@ In conclusion, Code Cards is a revolutionary platform that is changing the way s
   </div>
 </div>
 
-
+<h3>About Us</h3>
 | Name | Github Profile | Role |
 | :---- | :---- | :---- |
 | Andrew Meng | [@supermengman](https://github.com/supermengman) | Backend Developer |
