@@ -34,13 +34,22 @@
   }
 
   /* Style both sides */
-  .flip-card-front, .flip-card-back {
+  .flip-card-front {
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: rgba(250, 249, 246, 0.402);
     color: black;
     border-radius: 15px 50px;
+  }
+
+  .flip-card-back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(250, 249, 246, 0.402);
+    color: black;
+    border-radius: 50px 15px;
   }
 
   /* Style the back side */
