@@ -2,7 +2,7 @@
 
 <img src="assets/img/logo2.png"
      alt="logo"
-     style="float: left; margin-right: 10px;" />
+     style="float: left; margin-right: 10px; size: 20px" />
 
 | Name | Github Profile | Role |
 | :---- | :---- | :---- |
