@@ -21,7 +21,7 @@ fetch("https://csa-backend.rohanj.dev/api/flashcard/getFlashcardSetMC",
   }
 ).then(data => data.json())
 .then(data => {
-  const qNum = 0;
+  var qNum = 0;
   Object.keys(data).forEach(q => {
     const container = document.createElement("li")
     const qElem = document.createElement("h4")
@@ -46,7 +46,7 @@ fetch("https://csa-backend.rohanj.dev/api/flashcard/getFlashcardSetMC",
       choices.appendChild(li);
     })
 
-    document.getElementByID("quiz").appendChild(container)
+    document.getElementById("quiz").appendChild(container)
 
     answers = [...answers, "1"]
     qNum++
