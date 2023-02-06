@@ -3,6 +3,8 @@
 <div id="flashcard-container"></div>
 
 <form id="flashcard-form">
+  <label for="setName">Set Name:</label>
+  <input type="text" id="setName" name = "setName">
   <div id="flashcard-inputs-0" class="card-input">
     <table>
       <thead>
@@ -62,13 +64,14 @@
 
   submitButton.addEventListener("click", function() {
     event.preventDefault();
+    const flashcardSet = [];
     const flashcards = [];
     for (let i = 0; i < flashcardCount; i++) {
       const term = document.getElementById(`term-${i}`).value;
       const definition = document.getElementById(`definition-${i}`).value;
-      flashcards.push({ term, definition });
+      flashcardSet.push({ front: term, back: definition });
     }
-    flashcards.push({ setInfo: { public: publicCheck.checked, class: setClass.value }});
+    flashcards.push({ email: "rohanj2006@gmail.com", password: "password", name: document.getElementById("setName").value, isPublic: publicCheck.checked, flashcards: flashcardSet});
     const flashcardsJson = JSON.stringify(flashcards);
     console.log(flashcardsJson);
   });
