@@ -7,9 +7,10 @@
 
 <style>
     
-    body {
-        background-image: src ="assets/img/logo1.png"
+    img{
+        size:20px;
     }
+
 </style>
 
 
