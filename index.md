@@ -26,7 +26,7 @@
 </p>
   </div>
   <div class="column">
-    <img src="assets/img/logo5.png">
+    <img src="assets/img/logo8.png">
   </div>
   <div class="column">
     <h3>Subjects:</h3>
