@@ -26,9 +26,7 @@
 </p>
   </div>
   <div class="column">
-    <img src="assets/img/logo5.png"
-     alt="logo"
-     style="float: left; margin-right: 10px; size:20%" />
+    <img src="assets/img/logo5.png">
   </div>
   <div class="column">
     <h3>Subjects:</h3>
