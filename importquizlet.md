@@ -6,5 +6,13 @@
 <script>
 const ID = 20; // will be inputted by user later
 
-
+fetch("https://csa-backend.rohanj.dev/api/#changethis#",
+  { 
+    method: 'POST',  
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({id: ID})
+  }
+).then(data => data.json())
 </script>
