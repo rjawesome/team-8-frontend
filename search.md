@@ -15,7 +15,7 @@
   </form>
   <script>
     // add event listener for form submission
-    document.querySelector("form").addEventListener("submit", function(event) {
+    document.querySelector("form").addEventListener("submit", function(event)) {
       event.preventDefault();
       var searchTerm = document.getElementById("search-bar").value;
       // send searchTerm and classFilter to server or perform search logic here
@@ -26,11 +26,12 @@
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({name: searchTerm})
-  }
-).then(data => data.json())
-.then(data => {
-      data.forEach(data => {
-        console.log(data.name)
-      })
-    });
-  </script>
+    }
+    ).then(data => data.json())
+      .then(data => {
+        data.forEach(data => {
+          console.log(data.name)
+        })
+      });
+      }
+    </script>
