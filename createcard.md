@@ -104,8 +104,9 @@
         };
         fetch(url, options).then(response => {
 
-            response.text().then(data => {
+            response.json().then(data => {
                 console.log(data);
+                window.location = `/flashcard.html?id=` + data.id;
             })
         })
 
