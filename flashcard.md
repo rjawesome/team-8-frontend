@@ -19,6 +19,7 @@
 <button class="answer-btn" style="display: none;" onclick="forward()">☑️</button>
 
 <script>
+  
   var flipped = false
   const flipCard = () => {
     flipped = !flipped
@@ -29,7 +30,15 @@
   }
 
 
-  const ID = 20; // will be inputted by user later
+  var currentUrl = window.location.href;
+  let url = new URL(currentUrl);                                                  
+  let urlParams = new URLSearchParams(url.search); 
+
+
+  const ID = parseInt(urlParams.get('id')); // will be inputted by user later
+  if (ID === null || isNaN(ID)) {
+    window.location.pathname = "/search.html";
+  }
   var flashcards = [];
   var currentFlashcard = 0;
 
