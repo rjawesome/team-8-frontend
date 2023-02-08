@@ -2,7 +2,6 @@
 
 <!--No actions yet-->
 
-<!--Replace post with csa-backend.rohanj.dev/authenticate later, testing with localhost for now-->
 <form action="localhost:8085/api/jwt/authenticate" method="post" id="form" autocomplete="on">
     <table>
         <tr>
@@ -19,3 +18,16 @@
     </table>
 </form>
 <h4>Don't have an account? Sign up <a href="/signup">here</a></h4>
+
+<script>
+    // Replace with localhost:8085 for testing
+    var url = "csa-backend.rohanj.dev"
+
+    const login_url = url + "/api/jwt/authenticate
+    
+    function login_user() {
+        
+    }
+
+
+</script>
