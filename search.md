@@ -10,6 +10,8 @@
       <thead>
         <tr>
           <th>Flashcard Sets:</th>
+          <th>Quiz:</th>
+          <th>Flashcards:</th>
         </tr>
       </thead>
       <tbody id="flashcard-sets-container"></tbody>
@@ -34,9 +36,27 @@
     .then(data => {
       data.forEach(data => {
         var flashcardSetRow = document.createElement("tr");
-        var flashcardSetName = document.createElement("td");
+        var flashcardSetElem = document.createElement("td");
+        var flashcardSetName = document.createElement("p");
+        var mcButtonA = document.createElement("a")
+        mcButtonA.href = "/quiz?id=" + data.id;
+        mcButtonA.innerHTML = "mc"
+        var mcButton = document.createElement("td")
+        mcButton.appendChild(mcButtonA)
+        var flashButtonA = document.createElement("a")
+        flashButtonA.href = "/flashcard?id=" + data.id;
+        flashButtonA.innerHTML = "flash"
+        var flashButton = document.createElement("td")
+        flashButton.appendChild(flashButtonA)
         flashcardSetName.innerHTML = data.name;
-        flashcardSetRow.appendChild(flashcardSetName);
+        flashcardSetElem.appendChild(flashcardSetName)
+        // flashcardSetElem.appendChild(mcButton)
+        // flashcardSetElem.appendChild(flashButton)
+
+
+        flashcardSetRow.appendChild(flashcardSetElem);
+        flashcardSetRow.appendChild(mcButton)
+        flashcardSetRow.appendChild(flashButton)
         document.getElementById("flashcard-sets-container").appendChild(flashcardSetRow);
       })
     });
