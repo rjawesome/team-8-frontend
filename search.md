@@ -1,5 +1,5 @@
 <h2>Flashcard Search</h2>
-  <form>
+  <form id="form">
     <label for="search-bar">Search for Flashcard Sets:</label>
     <input type="text" id="search-bar" name="search-bar">
     <br>
@@ -15,7 +15,7 @@
   </form>
   <script>
     // add event listener for form submission
-    document.querySelector("form").addEventListener("submit", function(event)) {
+    document.getElementById("form").onsubmit = (function(event) {
       event.preventDefault();
       var searchTerm = document.getElementById("search-bar").value;
       // send searchTerm and classFilter to server or perform search logic here
@@ -33,5 +33,5 @@
           console.log(data.name)
         })
       });
-      }
+      })
     </script>
