@@ -21,6 +21,7 @@
   event.preventDefault();
   var searchTerm = document.getElementById("search-bar").value;
   // send searchTerm and classFilter to server or perform search logic here
+  document.getElementById("flashcard-sets-container").innerHTML = '';
   fetch("https://csa-backend.rohanj.dev/api/flashcard/getFlashcardSetsByName",
   { 
   method: 'POST',  
