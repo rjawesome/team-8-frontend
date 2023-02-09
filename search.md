@@ -9,7 +9,7 @@
     <table id="flashcard-sets-table">
       <thead>
         <tr>
-          <th>Flashcard Set Name</th>
+          <th>Flashcard Sets:</th>
         </tr>
       </thead>
       <tbody id="flashcard-sets-container"></tbody>
