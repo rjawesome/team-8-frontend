@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="{{ '/assets/css/search.scss?v=' | append: site.github.build_revision | relative_url }}">
+
 <h2>Flashcard Search</h2>
   <body>
     <form id="form">
@@ -9,12 +11,12 @@
   </body>
   <script>
     // add event listener for form submission
-document.getElementById("form").onsubmit = (function(event) {
+  document.getElementById("form").onsubmit = (function(event) {
   event.preventDefault();
   var searchTerm = document.getElementById("search-bar").value;
   // send searchTerm and classFilter to server or perform search logic here
   fetch("https://csa-backend.rohanj.dev/api/flashcard/getFlashcardSetsByName",
-{ 
+  { 
   method: 'POST',  
   headers: {
     'Content-Type': 'application/json'
