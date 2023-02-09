@@ -6,8 +6,14 @@
       <input type="text" id="search-bar" placeholder="Search for flashcard sets">
       <button type="submit">Search</button>
     </form>
-    <div id="flashcard-sets-container"></div>
-
+    <table id="flashcard-sets-table">
+      <thead>
+        <tr>
+          <th>Flashcard Set Name</th>
+        </tr>
+      </thead>
+      <tbody id="flashcard-sets-container"></tbody>
+    </table>
   </body>
   <script>
     // add event listener for form submission
@@ -26,10 +32,11 @@
   ).then(data => data.json())
     .then(data => {
       data.forEach(data => {
-        var flashcardSet = document.createElement("div");
-        flashcardSet.classList.add("flashcard-set");
-        flashcardSet.innerHTML = data.name;
-        document.getElementById("flashcard-sets-container").appendChild(flashcardSet);
+        var flashcardSetRow = document.createElement("tr");
+        var flashcardSetName = document.createElement("td");
+        flashcardSetName.innerHTML = data.name;
+        flashcardSetRow.appendChild(flashcardSetName);
+        document.getElementById("flashcard-sets-container").appendChild(flashcardSetRow);
       })
     });
   })
