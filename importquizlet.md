@@ -1,5 +1,5 @@
 <h2>Import Quizlets from Online</h2>
-<ul class="quizlet" id="quizlet"></ul>
+<ul class="import" id="import"></ul>
 
 <style>
   .form-control{
@@ -105,7 +105,7 @@
 
             response.json().then(data => {
                 console.log(data);
-                window.location = `/import.html?id=` + data.id;
+                window.location = `/import?id=` + data.id;
             })
         })
 
