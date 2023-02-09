@@ -105,7 +105,7 @@
 
             response.json().then(data => {
                 console.log(data);
-                window.location = `/import?id=` + data.id;
+                window.location = `/import.html?id=` + data.id;
             })
         })
 
