@@ -41,6 +41,3 @@
     document.getElementById("flashcardSet").innerHTML = table;
   }
 </script>
-<body onload="createFlashcardSet()">
-<div id="flashcardSet"></div>
-</body>
