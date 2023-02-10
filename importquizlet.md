@@ -21,11 +21,9 @@
 </style>
 
 
-  </div>
   <button type="button" id="add-card-button">Add Card</button><br>
-  <label>Class:
-    <input type="text" id="set-class" name="set-class">
+  <label>Quizlet Link:
+    <input type="text" id="enter-link" name="enter-link">
   </label><br>
   <input type="checkbox" id="public-check" name="public-check">Public
   <button type="button" id="submit-card-button">Submit</button>
-</form>
