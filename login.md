@@ -2,7 +2,7 @@
 
 <!--No actions yet-->
 
-<form action="localhost:8085/api/jwt/authenticate" method="post" id="form" autocomplete="on">
+<form onsubmit="login_user()" method="post" id="form" autocomplete="on">
     <table>
         <tr>
             <td>Email:</td>
@@ -24,7 +24,7 @@
     //var url = "csa-backend.rohanj.dev";
     var url = "localhost:8085";
 
-    const login_url ="http://" + url + "/api/jwt/authenticate";
+    const login_url = "http://" + url + "/api/jwt/authenticate";
     
     function login_user() {
         const body = {
