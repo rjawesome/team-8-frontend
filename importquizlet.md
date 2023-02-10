@@ -27,20 +27,20 @@
   <button type="button" id="submit-set-button">Submit</button>
 
 
-    <script>
-      async function createFlashcardSet() {
-        const response = await fetch("https://csa-backend.rohanj.dev/api/flashcard/createFlashcardSet");
-        const data = await response.json();
-        
-        let table = "<table><tr><th>Key</th><th>Value</th></tr>";
-        for (let key in data) {
-          table += "<tr><td>" + key + "</td><td>" + data[key] + "</td></tr>";
-        }
-        table += "</table>";
-        
-        document.getElementById("flashcardSet").innerHTML = table;
-      }
-    </script>
-  <body onload="createFlashcardSet()">
-    <div id="flashcardSet"></div>
-  </body>
+<script>
+  async function createFlashcardSet() {
+    const response = await fetch("https://csa-backend.rohanj.dev/api/flashcard/createFlashcardSet");
+    const data = await response.json();
+
+    let table = "<table><tr><th>Key</th><th>Value</th></tr>";
+    for (let key in data) {
+      table += "<tr><td>" + key + "</td><td>" + data[key] + "</td></tr>";
+    }
+    table += "</table>";
+
+    document.getElementById("flashcardSet").innerHTML = table;
+  }
+</script>
+<body onload="createFlashcardSet()">
+<div id="flashcardSet"></div>
+</body>
