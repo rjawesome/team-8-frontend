@@ -2,7 +2,7 @@
 
 <!--No actions yet-->
 
-<form action="return login_user()" method="post" id="form" autocomplete="on">
+<form onSubmit="login_user()" method="post" id="form" autocomplete="on">
     <table>
         <tr>
             <td>Email:</td>
