@@ -41,8 +41,6 @@
                 "content-type": "application/json"
             }
         };
-        console.log(document.getElementById("email").value)
-        console.log(document.getElementById("password").value)
         fetch(login_url, request_options)
             .then(response => {
                 if (!response.ok) {
@@ -50,7 +48,7 @@
                     console.log(errorMsg);
                     return;
                 }
-                window.location.href = "/team-8-frontend/data/database";
+                window.location.href = "/team-8-frontend/search";
             })
     }
 
