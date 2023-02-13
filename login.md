@@ -41,8 +41,8 @@
                 "content-type": "application/json"
             }
         };
-        print(document.getElementById("email").value)
-        print(document.getElementById("passowrd").value)
+        console.log(document.getElementById("email").value)
+        console.log(document.getElementById("passowrd").value)
         fetch(login_url, request_options)
             .then(response => {
                 if (!response.ok) {
