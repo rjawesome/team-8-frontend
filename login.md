@@ -29,7 +29,7 @@
     function login_user() {
         const body = {
             email: document.getElementById("email").value,
-            password: document.getElementById("password").value
+            passwordHash: document.getElementById("password").value
         };
         const request_options = {
             method: "POST",
