@@ -31,7 +31,7 @@
 
             // Should be same as person????
             email: document.getElementById("email").value,
-            passwordHash: document.getElementById("password").value
+            password: document.getElementById("password").value
         };
         const request_options = {
             method: "POST",
