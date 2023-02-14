@@ -28,6 +28,8 @@
     
     function login_user() {
         const body = {
+
+            // Should be same as person????
             email: document.getElementById("email").value,
             passwordHash: document.getElementById("password").value
         };
