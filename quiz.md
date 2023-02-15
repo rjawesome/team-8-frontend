@@ -53,7 +53,7 @@ fetch("https://csa-backend.rohanj.dev/api/flashcard/getFlashcardSetMC",
 .then(data => {
   var qNum = 0;
   Object.keys(data).forEach(q => {
-    datas.push(q);
+    datas.push(data[q]);
     const container = document.createElement("li")
     const qElem = document.createElement("h4")
     qElem.innerHTML = "What definition matches this term: " + q;
@@ -112,7 +112,7 @@ function getScore(email, password) {
           score++;
           statsInfo.statsList.push({id: datas[i].id, correct: true}) 
        } else {
-          document.getElementById("q"+i).color = 'red'
+          document.getElementById("q"+i).style.color = 'red'
           statsInfo.statsList.push({id: datas[i].id, correct: false})
        }
     }
