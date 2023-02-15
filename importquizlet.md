@@ -40,7 +40,7 @@
 
     var url = "https://csa-backend.rohanj.dev/api/flashcard/getQuizlet";
     const options = {
-            method: 'POST', // *GET, POST, PUT, DELETE, etc.
+            method: 'GET', // *GET, POST, PUT, DELETE, etc.
             headers: {
             'Content-Type': 'application/json'
             // 'Content-Type': 'application/x-www-form-urlencoded',
