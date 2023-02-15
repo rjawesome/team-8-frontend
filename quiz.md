@@ -5,7 +5,7 @@
 
 </ul>
 <button class="view-results" onclick="returnScore()" id="check">Check</button>
-<span id="myresults" class="my-results">Your score is -/3</span>
+<span id="myresults" class="my-results">Your score is -/-</span>
 
 <script>
  function shuffle(array) {
