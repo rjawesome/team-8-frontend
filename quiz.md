@@ -4,7 +4,7 @@
 <ul class="quiz" id="quiz">
 
 </ul>
-<button class="view-results" onclick="returnScore()">Check</button>
+<button class="view-results" onclick="returnScore()" id="check">Check</button>
 <span id="myresults" class="my-results">Your score is -/3</span>
 
 <script>
@@ -94,9 +94,13 @@ fetch("https://csa-backend.rohanj.dev/api/flashcard/getFlashcardSetMC",
 function getCheckedValue(radioName) {
     var radios = document.getElementsByName(radioName);
     for (var y = 0; y < radios.length; y++)
+        // disable radio
+        radios[y].disabled = true
         if (radios[y].checked) return radios[y].value;
 }
 function getScore() {
+    // disable submit button
+    document.getElementById("check").disabled = true
     var score = 0;
     for (var i = 0; i < answers.length; i++)
         if (getCheckedValue("question" + i) === answers[i]) score += 1;
@@ -105,8 +109,5 @@ function getScore() {
 function returnScore() {
     document.getElementById("myresults").innerHTML =
         "Your score is " + getScore() + "/" + answers.length;
-    if (getScore() > 2) {
-        console.log("Bravo");
-    }
 }
 </script>
