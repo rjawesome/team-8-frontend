@@ -18,13 +18,6 @@
 <button class="answer-btn" style="display: none;" onclick="sendIncorrect()">❌</button>
 <button class="answer-btn" style="display: none;" onclick="sendCorrect()">☑️</button>
 
-<div id="stats-container">
-  <div id="stats">
-    <h1>Stats</h1>
-    <p>Correct: <span id="stats-correct">0</span></p>
-    <p>Incorrect: <span id="stats-incorrect">0</span></p>
-  </div>
-</div>
 
 <script>
   
