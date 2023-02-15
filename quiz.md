@@ -93,11 +93,13 @@ fetch("https://csa-backend.rohanj.dev/api/flashcard/getFlashcardSetMC",
 
 function getCheckedValue(radioName) {
     var radios = document.getElementsByName(radioName);
+    var ret = undefined;
     for (var y = 0; y < radios.length; y++) {
         // disable radio
         radios[y].disabled = true
-        if (radios[y].checked) return radios[y].value;
+        if (radios[y].checked) ret = radios[y].value;
     }
+    return ret;
 }
 function getScore() {
     // disable submit button
