@@ -86,7 +86,7 @@ fetch("https://csa-backend.rohanj.dev/api/flashcard/getFlashcardSetMC",
 
     document.getElementById("quiz").appendChild(container)
 
-    answers = [...answers, correctAnswer.toString]
+    answers = [...answers, correctAnswer.toString()]
     qNum++
   })
 })
