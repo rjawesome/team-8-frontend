@@ -29,11 +29,11 @@
   <button type="button" id="submit-set-button">Submit</button>
 </form>
 
+console.log(options)
 
 <script>
   const flashcardForm = document.getElementById("import-quizlet");
   const setLink = document.getElementById("enter-link");
-  
   document.getElementById("submit-set-button").onclick = (e) => {
 	  e.preventDefault()
     const flashcardSet = { email: "rohanj2006@gmail.com", password: "password", id: setLink.value.split("quizlet.com/").splice(-1)[0].split("/")[0]};
