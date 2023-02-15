@@ -20,8 +20,16 @@
   }
 </style>
 
+
+
+<form id="import-quizlet">
   <label>Quizlet Link:
     <input type="text" id="enter-link" name="enter-link">
   </label><br>
-  <input type="checkbox" id="public-check" name="public-check">Public
   <button type="button" id="submit-set-button">Submit</button>
+</form>
+
+
+
+
+
