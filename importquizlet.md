@@ -33,7 +33,6 @@
 <script>
   const flashcardForm = document.getElementById("import-quizlet");
   const setLink = document.getElementById("enter-link");
-  setLink.split("quizlet.com/").splice(-1)[0].split("/")[0] 
   
   formVarName.onsubmit = (e) => {
 	  e.preventDefault()
