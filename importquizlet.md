@@ -59,7 +59,6 @@
             console.log("Error: " + err);
         })
   });
-}
 </script>
 
 
