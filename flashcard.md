@@ -2,7 +2,7 @@
 
 <link rel="stylesheet" href="{{ '/assets/css/flashcard.css?v=' | append: site.github.build_revision | relative_url }}">
 <p id="counter">1/1</p>
-<div class="flip-card" id="flipcard">
+<div class="flip-card" id="flipcard" name="flipcard">
   <div class="flip-card-inner" id="inner-flipcard" onclick="flipCard()">
     <div class="flip-card-front" id = "front">
       
@@ -15,8 +15,16 @@
 <button onclick="backward()">⬅️</button>
 <button onclick="forward()">➡️</button>
 
-<button class="answer-btn" style="display: none;" onclick="forward()">❌</button>
-<button class="answer-btn" style="display: none;" onclick="forward()">☑️</button>
+<button class="answer-btn" style="display: none;" onclick="sendIncorrect()">❌</button>
+<button class="answer-btn" style="display: none;" onclick="sendCorrect()">☑️</button>
+
+<div id="stats-container">
+  <div id="stats">
+    <h1>Stats</h1>
+    <p>Correct: <span id="stats-correct">0</span></p>
+    <p>Incorrect: <span id="stats-incorrect">0</span></p>
+  </div>
+</div>
 
 <script>
   
@@ -58,11 +66,12 @@
       document.getElementById("front").innerHTML = flashcardSet[0].front;
       document.getElementById("back").innerHTML = flashcardSet[0].back;
       document.getElementById("counter").innerHTML = "1/" + flashcardSet.length;
+
+      document.getElementsByName("flipcard")[0].id = flashcardSet[0].id;
       
       flashcardSet.forEach((flashcard, index) => {
         console.log(flashcard);
         console.log(flashcard.front);
-        
       })
     })
   })
@@ -77,6 +86,8 @@
       document.getElementById("front").innerHTML = flashcards[currentFlashcard].front;
       document.getElementById("back").innerHTML = flashcards[currentFlashcard].back;
       document.getElementById("counter").innerHTML = (currentFlashcard+1) + "/" + flashcards.length;
+      console.log(flashcards[currentFlashcard].id);
+      document.getElementsByName("flipcard")[0].id = flashcards[currentFlashcard].id;
     }, flipped ? 275 : 0)
 
     if (flipped) {
@@ -99,6 +110,32 @@
     if (flipped) {
       flipCard();
     }
+  }
+
+  function sendIncorrect() {
+    sendStats(false);
+    forward();
+  }
+
+  function sendCorrect() {
+    sendStats(true);
+    forward();
+  }
+
+  function sendStats(isCorrect) {
+    fetch("https://csa-backend.rohanj.dev/api/stats/createStats",
+      { 
+        method: 'POST',  
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({email: "rohanj2006@gmail.com", password: "password", id: flashcards[currentFlashcard].id, correct: isCorrect})
+      }
+    ).then(response => {
+      response.json().then(data => {
+        console.log(data);
+      })
+    })
   }
 
 </script>
