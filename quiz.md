@@ -73,7 +73,7 @@ fetch("https://csa-backend.rohanj.dev/api/flashcard/getFlashcardSetMC",
       input.name = "question"+qNum;
       input.value = index.toString();
       const span = document.createElement("span")
-      span.innerHTML = ans;
+      span.innerHTML = ans.ans;
       label.appendChild(input);
       label.appendChild(span);
       li.appendChild(label);
