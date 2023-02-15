@@ -33,32 +33,40 @@
 <script>
   const flashcardForm = document.getElementById("import-quizlet");
   const setLink = document.getElementById("enter-link");
-  
+
   document.getElementById("submit-set-button").onclick = (e) => {
-	  e.preventDefault()
-    const flashcardSet = { email: "rohanj2006@gmail.com", password: "password", id: setLink.value.split("quizlet.com/").splice(-1)[0].split("/")[0]};
+    e.preventDefault();
+    const flashcardSet = { email: "rohanj2006@gmail.com", password: "password", id: setLink.value.split("quizlet.com/").splice(-1)[0].split("/")[0] };
 
     var url = "https://csa-backend.rohanj.dev/api/flashcard/getQuizlet";
     const options = {
-            method: 'POST', // *GET, POST, PUT, DELETE, etc.
-            headers: {
-            'Content-Type': 'application/json'
-            // 'Content-Type': 'application/x-www-form-urlencoded',
-            },
-            body: JSON.stringify(flashcardSet) // body data type must match "Content-Type" header
-        };
-        fetch(url, options).then(response => {
+      method: 'POST', // *GET, POST, PUT, DELETE, etc.
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(flashcardSet)
+    };
+    fetch(url, options).then(response => {
+      response.json().then(data => {
+        console.log(data);
 
-            response.json().then(data => {
-                console.log(data);
-                window.location = `/flashcard.html?id=` + data.id;
-            })
-        })
-        .catch(err => {
-            console.log("Error: " + err);
-        })
+        // create a new <p> tag and set its content to the extracted id
+        const idElement = document.createElement("p");
+        idElement.textContent = "Extracted id: " + data.id;
+
+        // append the new element to the DOM
+        const importList = document.getElementById("import");
+        importList.appendChild(idElement);
+
+        // navigate to the flashcard page with the extracted id
+        window.location = `/flashcard.html?id=${data.id}`;
+      });
+    }).catch(err => {
+      console.log("Error: " + err);
+    });
   }
 </script>
+
 
 
 
