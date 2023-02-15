@@ -123,5 +123,15 @@ function returnScore() {
     document.getElementById("myresults").innerHTML =
         "Your score is " + score + "/" + answers.length;
     console.log(statsInfo)
+ 
+    // send stats
+    fetch("https://csa-backend.rohanj.dev/api/stats/createStatsBatch", {
+       method: 'POST',
+       headers: {
+         'Accept': 'application/json',
+         'Content-Type': 'application/json'
+       },
+       body: JSON.stringify(statsInfo)
+    });
 }
 </script>
