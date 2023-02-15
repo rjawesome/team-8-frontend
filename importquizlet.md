@@ -51,7 +51,6 @@
 
             response.json().then(data => {
                 console.log(data);
-                window.location = `/flashcard.html?id=` + data.id;
             })
         })
         .catch(err => {
