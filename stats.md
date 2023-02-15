@@ -49,7 +49,7 @@
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({email: "rohanj2006@gmail.com", password: "password", id: 20})
+        body: JSON.stringify({email: "rohanj2006@gmail.com", password: "password", id: ID})
       })
         .then(response => response.json())
         .then(stats => {
