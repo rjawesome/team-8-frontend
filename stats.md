@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="{{ '/assets/css/search.scss?v=' | append: site.github.build_revision | relative_url }}">
 
 <html>
   <head>
