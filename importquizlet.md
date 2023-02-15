@@ -34,7 +34,7 @@
   const flashcardForm = document.getElementById("import-quizlet");
   const setLink = document.getElementById("enter-link");
   
-  flashcardForm.onsubmit = (e) => {
+  document.getElementById("submit-set-button").onclick = (e) => {
 	  e.preventDefault()
     const flashcardSet = { email: "rohanj2006@gmail.com", password: "password", id: setLink.value.splice(-1)[0].split("/")[0]};
 
