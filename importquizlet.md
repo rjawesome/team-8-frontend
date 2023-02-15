@@ -31,7 +31,7 @@
 
 
 <script>
-  const flashcardForm = document.getElementById("import-quizlet");
+  const flashcardSet = document.getElementById("import-quizlet");
   const setLink = document.getElementById("enter-link");
   
   document.getElementById("submit-set-button").onclick = (e) => {
