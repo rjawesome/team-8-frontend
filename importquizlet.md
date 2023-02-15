@@ -36,7 +36,7 @@
   
   document.getElementById("submit-set-button").onclick = (e) => {
 	  e.preventDefault()
-    const flashcardSet = { email: "rohanj2006@gmail.com", password: "password", id: setLink.value.splice(-1)[0].split("/")[0]};
+    const flashcardSet = { email: "rohanj2006@gmail.com", password: "password", id: setLink.value.split("/").pop()};
 
     var url = "https://csa-backend.rohanj.dev/api/flashcard/getQuizlet";
     const options = {
