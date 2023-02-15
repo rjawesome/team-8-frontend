@@ -8,6 +8,26 @@
 <span id="myresults" class="my-results">Your score is -/3</span>
 
 <script>
+ function shuffle(array) {
+  let currentIndex = array.length,  randomIndex;
+
+  // While there remain elements to shuffle.
+  while (currentIndex != 0) {
+
+    // Pick a remaining element.
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
+  }
+
+  return array;
+}
+ 
+  
+  
 var currentUrl = window.location.href;
 let url = new URL(currentUrl);                                                  
 let urlParams = new URLSearchParams(url.search); 
@@ -19,6 +39,7 @@ if (ID === null || isNaN(ID)) {
 }
 
 var answers = [];
+var datas = [];
 
 fetch("https://csa-backend.rohanj.dev/api/flashcard/getFlashcardSetMC",
   { 
@@ -32,6 +53,7 @@ fetch("https://csa-backend.rohanj.dev/api/flashcard/getFlashcardSetMC",
 .then(data => {
   var qNum = 0;
   Object.keys(data).forEach(q => {
+    datas.push(q);
     const container = document.createElement("li")
     const qElem = document.createElement("h4")
     qElem.innerHTML = "What definition matches this term: " + q;
@@ -39,8 +61,11 @@ fetch("https://csa-backend.rohanj.dev/api/flashcard/getFlashcardSetMC",
 
     const choices = document.createElement("ul")
     choices.classList = "choices"
+  
+    var randAnswers = shuffle(data[q].answers.map((e, i) => ({ans: e, ind: i})))
+    var correctAnswer = -1;
 
-    data[q].forEach((ans, index) => {
+    randAnswers.forEach((ans, index) => {
       const li = document.createElement("li")
       const label = document.createElement("label")
       const input = document.createElement("input")
@@ -53,13 +78,15 @@ fetch("https://csa-backend.rohanj.dev/api/flashcard/getFlashcardSetMC",
       label.appendChild(span);
       li.appendChild(label);
       choices.appendChild(li);
+  
+      if (ans.ind === 0) correctAnswer = index;
     })
     
     container.appendChild(choices)
 
     document.getElementById("quiz").appendChild(container)
 
-    answers = [...answers, "0"]
+    answers = [...answers, correctAnswer.toString]
     qNum++
   })
 })
