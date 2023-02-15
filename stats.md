@@ -1,64 +1,76 @@
 <link rel="stylesheet" href="{{ '/assets/css/search.scss?v=' | append: site.github.build_revision | relative_url }}">
 <html>
   <head>
-    <title>FlashcardStats</title>
+    <title>Flashcard Stats</title>
   </head>
   <body>
-    <h2>Flashcard Stats</h2>
-    <form id="form">
-      <input type="text" id="search-bar" placeholder="Search for flashcard sets">
-      <button type="submit">Search</button>
-    </form>
-    <table id="flashcard-sets-table">
+    <h2>Flashcard Statistics</h2>
+    <h3 id="flashcardset-name"></h3>
+    <table>
       <thead>
         <tr>
-          <th>Flashcard Set:</th>
-          <th>Stats:</th>
+          <th>Front</th>
+          <th>Back</th>
+          <th>Correct</th>
+          <th>Incorrect</th>
         </tr>
       </thead>
-      <tbody id="flashcard-sets-container"></tbody>
+      <tbody id="stats-table-body"></tbody>
     </table>
-    <script>
-      document.getElementById("form").onsubmit = (function(event) {
-        event.preventDefault();
-        var searchTerm = document.getElementById("search-bar").value;
-        document.getElementById("flashcard-sets-container").innerHTML = '';
-        fetch("https://csa-backend.rohanj.dev/api/flashcard/getFlashcardSetsByName", {
-          method: 'POST',
+  
+  <script>
+      const statsTableBody = document.getElementById('stats-table-body');
+      var currentUrl = window.location.href;
+      let url = new URL(currentUrl);                                                  
+      let urlParams = new URLSearchParams(url.search); 
+
+
+      const ID = parseInt(urlParams.get('id')); // will be inputted by user later
+      if (ID === null || isNaN(ID)) {
+        window.location.pathname = "/search.html";
+      }
+
+      fetch("https://csa-backend.rohanj.dev/api/flashcard/getFlashcardSet",
+        { 
+          method: 'POST',  
           headers: {
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify({name: searchTerm})
-        }).then(data => data.json())
-          .then(data => {
-            data.forEach(data => {
-              var flashcardSetRow = document.createElement("tr");
-              var flashcardSetElem = document.createElement("td");
-              var flashcardSetName = document.createElement("p");
-              flashcardSetName.innerHTML = data.name;
-              flashcardSetElem.appendChild(flashcardSetName);
-              flashcardSetRow.appendChild(flashcardSetElem);
-              document.getElementById("flashcard-sets-container").appendChild(flashcardSetRow);
-              // fetch stats from backend for this flashcard set
-              fetch("https://csa-backend.rohanj.dev/api/stats/getStatsByFlashcardSetId", {
-                method: 'POST',
-                headers: {
-                  'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({flashcardSetId: data.id})
-              }).then(statsData => statsData.json())
-                .then(statsData => {
-                  var statsElem = document.createElement("td");
-                  if (statsData.length > 0) {
-                    var stats = statsData[0];
-                    var statsText = "Total Quiz Attempts: " + stats.totalQuizAttempts + ", Total Flashcard Views: " + stats.totalFlashcardViews;
-                    statsElem.innerHTML = statsText;
-                  } else {
-                    statsElem.innerHTML = "No stats available";
-                  }
-                  flashcardSetRow.appendChild(statsElem);
-                });
-            });
+          body: JSON.stringify({id: ID})
+        }
+      ).then(response => {
+        response.json().then(data => {
+          document.getElementById("flashcardset-name").innerText = data.meta.name;
+        });
+      });
+
+      fetch('https://csa-backend.rohanj.dev/api/stats/getStatsByFlashcardSet',{ 
+        method: 'POST',  
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({email: "rohanj2006@gmail.com", password: "password", id: ID})
+      })
+        .then(response => response.json())
+        .then(stats => {
+          stats.forEach(stat => {
+            const row = document.createElement('tr');
+            const flashcardFront = document.createElement('td');
+            const flashcardBack = document.createElement('td');
+            const correctCell = document.createElement('td');
+            const incorrectCell = document.createElement('td');
+            
+            flashcardFront.innerText = stat.flashcard.front;
+            flashcardBack.innerText = stat.flashcard.back;
+            correctCell.innerText = stat.correct;
+            incorrectCell.innerText = stat.incorrect;
+
+            row.appendChild(flashcardFront);
+            row.appendChild(flashcardBack);
+            row.appendChild(correctCell);
+            row.appendChild(incorrectCell);
+
+            statsTableBody.appendChild(row);
           });
       });
     </script>

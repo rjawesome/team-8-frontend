@@ -12,6 +12,7 @@
           <th>Flashcard Sets:</th>
           <th>Quiz:</th>
           <th>Flashcards:</th>
+          <th>Stats:</th>
         </tr>
       </thead>
       <tbody id="flashcard-sets-container"></tbody>
@@ -50,13 +51,17 @@
         flashButton.appendChild(flashButtonA)
         flashcardSetName.innerHTML = data.name;
         flashcardSetElem.appendChild(flashcardSetName)
+        var statsButtonA = document.createElement("a")
+        statsButtonA.href = "/stats?id=" + data.id;
+        statsButtonA.innerHTML = "stats"
+        var statsButton = document.createElement("td")
+        statsButton.appendChild(statsButtonA)
         // flashcardSetElem.appendChild(mcButton)
         // flashcardSetElem.appendChild(flashButton)
-
-
         flashcardSetRow.appendChild(flashcardSetElem);
         flashcardSetRow.appendChild(mcButton)
         flashcardSetRow.appendChild(flashButton)
+        flashcardSetRow.appendChild(statsButton)
         document.getElementById("flashcard-sets-container").appendChild(flashcardSetRow);
       })
     });
