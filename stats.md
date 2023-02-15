@@ -1,77 +1,66 @@
-## Statistics
-
-<!--No actions yet-->
-<div class="stats">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-4">
-        <div class="card shadow-sm">
-          <div class="card-header bg-transparent text-center">
-            <h3>Card Set #1</h3>
-          </div>
-          <div class="card-body">
-            <p class="mb-0"><strong class="pr-1">Number of Terms:</strong>23</p>
-            <p class="mb-0"><strong class="pr-1">Date Completed:</strong>1/17/23</p>
-            <p class="mb-0"><strong class="pr-1">Subject: </strong>CS</p>
-            <p class="mb-0"><button type="button" id="retry-button">Retry</button></p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-8">
-        <div class="card shadow-sm">
-          <div class="card-header bg-transparent border-0">
-            <h3 class="mb-0"><i class="far fa-clone pr-1"></i>General Information</h3>
-          </div>
-          <div class="card-body pt-0">
-            <table class="table table-bordered">
-              <tr>
-                <th width="30%">Previous Score</th>
-                <td width="2%">:</td>
-                <td>17/23</td>
-              </tr>
-              <tr>
-                <th width="30%">High Score</th>
-                <td width="2%">:</td>
-                <td>21/23</td>
-              </tr>
-              <tr>
-                <th width="30%">Most Missed</th>
-                <td width="2%">:</td>
-                <td>Constructor</td>
-              </tr>
-              <tr>
-                <th width="30%">Most Correct</th>
-                <td width="2%">:</td>
-                <td>Class</td>
-              </tr>
-              <tr>
-                <th width="30%">Time</th>
-                <td width="2%">:</td>
-                <td>3:23</td>
-              </tr>
-            </table>
-          </div>
-        </div>
-          <div style="height: 26px"></div>
-        <div class="card shadow-sm">
-          <div class="card-header bg-transparent border-0">
-            <h3 class="mb-0"><i class="far fa-clone pr-1"></i>Most Missed Card</h3>
-          </div>
-          <div class="card-body pt-0">
-                <link rel="stylesheet" href="{{ '/assets/css/flashcard.css?v=' | append: site.github.build_revision | relative_url }}">
-                <div class="flip-card" id="flipcard">
-                    <div class="flip-card-inner" id="inner-flipcard" onclick="flipCard()">
-                        <div class="flip-card-front">
-                        Constructor
-                        </div>
-                        <div class="flip-card-back">
-                            The first method that runs in a class before any other method. Allows for the initialization and declaration of variables so that way the variables can be used in the project
-                        </div>
-                    </div>
-                </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<link rel="stylesheet" href="{{ '/assets/css/search.scss?v=' | append: site.github.build_revision | relative_url }}">
+<html>
+  <head>
+    <title>FlashcardStats</title>
+  </head>
+  <body>
+    <h2>Flashcard Stats</h2>
+    <form id="form">
+      <input type="text" id="search-bar" placeholder="Search for flashcard sets">
+      <button type="submit">Search</button>
+    </form>
+    <table id="flashcard-sets-table">
+      <thead>
+        <tr>
+          <th>Flashcard Set:</th>
+          <th>Stats:</th>
+        </tr>
+      </thead>
+      <tbody id="flashcard-sets-container"></tbody>
+    </table>
+    <script>
+      document.getElementById("form").onsubmit = (function(event) {
+        event.preventDefault();
+        var searchTerm = document.getElementById("search-bar").value;
+        document.getElementById("flashcard-sets-container").innerHTML = '';
+        fetch("https://csa-backend.rohanj.dev/api/flashcard/getFlashcardSetsByName", {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({name: searchTerm})
+        }).then(data => data.json())
+          .then(data => {
+            data.forEach(data => {
+              var flashcardSetRow = document.createElement("tr");
+              var flashcardSetElem = document.createElement("td");
+              var flashcardSetName = document.createElement("p");
+              flashcardSetName.innerHTML = data.name;
+              flashcardSetElem.appendChild(flashcardSetName);
+              flashcardSetRow.appendChild(flashcardSetElem);
+              document.getElementById("flashcard-sets-container").appendChild(flashcardSetRow);
+              // fetch stats from backend for this flashcard set
+              fetch("https://csa-backend.rohanj.dev/api/stats/getStatsByFlashcardSetId", {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({flashcardSetId: data.id})
+              }).then(statsData => statsData.json())
+                .then(statsData => {
+                  var statsElem = document.createElement("td");
+                  if (statsData.length > 0) {
+                    var stats = statsData[0];
+                    var statsText = "Total Quiz Attempts: " + stats.totalQuizAttempts + ", Total Flashcard Views: " + stats.totalFlashcardViews;
+                    statsElem.innerHTML = statsText;
+                  } else {
+                    statsElem.innerHTML = "No stats available";
+                  }
+                  flashcardSetRow.appendChild(statsElem);
+                });
+            });
+          });
+      });
+    </script>
+  </body>
+</html>

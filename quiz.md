@@ -5,7 +5,7 @@
 
 </ul>
 <button class="view-results" onclick="returnScore()" id="check">Check</button>
-<span id="myresults" class="my-results">Your score is -/3</span>
+<span id="myresults" class="my-results">Your score is -/-</span>
 
 <script>
  function shuffle(array) {
@@ -53,10 +53,11 @@ fetch("https://csa-backend.rohanj.dev/api/flashcard/getFlashcardSetMC",
 .then(data => {
   var qNum = 0;
   Object.keys(data).forEach(q => {
-    datas.push(q);
+    datas.push(data[q]);
     const container = document.createElement("li")
     const qElem = document.createElement("h4")
     qElem.innerHTML = "What definition matches this term: " + q;
+    qElem.id = "q"+qNum;
     container.appendChild(qElem)
 
     const choices = document.createElement("ul")
@@ -93,21 +94,44 @@ fetch("https://csa-backend.rohanj.dev/api/flashcard/getFlashcardSetMC",
 
 function getCheckedValue(radioName) {
     var radios = document.getElementsByName(radioName);
-    for (var y = 0; y < radios.length; y++)
+    var ret = undefined;
+    for (var y = 0; y < radios.length; y++) {
         // disable radio
         radios[y].disabled = true
-        if (radios[y].checked) return radios[y].value;
+        if (radios[y].checked) ret = radios[y].value;
+    }
+    return ret;
 }
-function getScore() {
+function getScore(email, password) {
     // disable submit button
     document.getElementById("check").disabled = true
     var score = 0;
-    for (var i = 0; i < answers.length; i++)
-        if (getCheckedValue("question" + i) === answers[i]) score += 1;
-    return score;
+    var statsInfo = {email, password, id: ID, statsList: []}
+    for (var i = 0; i < answers.length; i++) {
+       if (getCheckedValue("question" + i) === answers[i]) {
+          score++;
+          statsInfo.statsList.push({id: datas[i].id, correct: true}) 
+       } else {
+          document.getElementById("q"+i).style.color = 'red'
+          statsInfo.statsList.push({id: datas[i].id, correct: false})
+       }
+    }
+    return {score, statsInfo};
 }
 function returnScore() {
+    var { score, statsInfo } = getScore("rohanj2006@gmail.com", "password")
     document.getElementById("myresults").innerHTML =
-        "Your score is " + getScore() + "/" + answers.length;
+        "Your score is " + score + "/" + answers.length;
+    console.log(statsInfo)
+ 
+    // send stats
+    fetch("https://csa-backend.rohanj.dev/api/stats/createStatsBatch", {
+       method: 'POST',
+       headers: {
+         'Accept': 'application/json',
+         'Content-Type': 'application/json'
+       },
+       body: JSON.stringify(statsInfo)
+    });
 }
 </script>

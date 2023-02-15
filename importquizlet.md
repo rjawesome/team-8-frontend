@@ -20,8 +20,41 @@
   }
 </style>
 
+
+
+<form id="import-quizlet">
   <label>Quizlet Link:
     <input type="text" id="enter-link" name="enter-link">
   </label><br>
-  <input type="checkbox" id="public-check" name="public-check">Public
   <button type="button" id="submit-set-button">Submit</button>
+</form>
+
+
+<script>
+  const flashcardSet = document.getElementById("import-quizlet");
+  const setLink = document.getElementById("enter-link");
+  
+  document.getElementById("submit-set-button").onclick = (e) => {
+	  e.preventDefault()
+    const flashcardSet = { email: "rohanj2006@gmail.com", password: "password", id: setLink.value.split("quizlet.com/").splice(-1)[0].split("/")[0]};
+
+    var url = "https://csa-backend.rohanj.dev/api/flashcard/getQuizlet";
+    const options = {
+            method: 'POST', // *GET, POST, PUT, DELETE, etc.
+            headers: {
+            'Content-Type': 'application/json'
+            // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: JSON.stringify(flashcardSet) // body data type must match "Content-Type" header
+        };
+        fetch(url, options).then(response => {
+
+            response.json().then(data => {
+                console.log(data);
+            })
+        })
+        .catch(err => {
+            console.log("Error: " + err);
+        })
+  }
+</script>
