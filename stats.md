@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="{{ '/assets/css/search.scss?v=' | append: site.github.build_revision | relative_url }}">
 <html>
   <head>
-    <title>FlashcardStats</title>
+    <title>Flashcard Stats</title>
   </head>
   <body>
     <h2>Flashcard Statistics</h2>
