@@ -5,7 +5,7 @@
     <title>Flashcard Statistics</title>
   </head>
   <body>
-    <h1>Flashcard Statistics</h1>
+    <h2>Flashcard Statistics</h2>
     <table>
       <thead>
         <tr>
