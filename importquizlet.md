@@ -29,9 +29,8 @@
   <button type="button" id="submit-set-button">Submit</button>
 </form>
 
-console.log(options)
-
 <script>
+  console.log(options)
   const flashcardForm = document.getElementById("import-quizlet");
   const setLink = document.getElementById("enter-link");
   document.getElementById("submit-set-button").onclick = (e) => {
