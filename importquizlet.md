@@ -38,7 +38,7 @@
 	  e.preventDefault()
     const flashcardSet = { email: "rohanj2006@gmail.com", password: "password", id: setLink.value.split("quizlet.com/").splice(-1)[0].split("/")[0]};
 
-    var url = "https://csa-backend.rohanj.dev/api/flashcard/getQuizlet";
+    var url = "http://localhost:8085/api/flashcard/getQuizlet";
     const options = {
             method: 'POST', // *GET, POST, PUT, DELETE, etc.
             headers: {
