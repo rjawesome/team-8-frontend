@@ -31,12 +31,12 @@
 
 
 <script>
-  const flashcardForm = document.getElementById("import-quizlet");
+  const flashcardSet = document.getElementById("import-quizlet");
   const setLink = document.getElementById("enter-link");
   
-  flashcardForm.onsubmit = (e) => {
+  document.getElementById("submit-set-button").onclick = (e) => {
 	  e.preventDefault()
-    const flashcardSet = { email: "rohanj2006@gmail.com", password: "password", id: setLink.value.splice(-1)[0].split("/")[0]};
+    const flashcardSet = { email: "rohanj2006@gmail.com", password: "password", id: setLink.value.split("quizlet.com/").splice(-1)[0].split("/")[0]};
 
     var url = "https://csa-backend.rohanj.dev/api/flashcard/getQuizlet";
     const options = {
@@ -45,13 +45,12 @@
             'Content-Type': 'application/json'
             // 'Content-Type': 'application/x-www-form-urlencoded',
             },
-            body: JSON.parse(flashcardSet) // body data type must match "Content-Type" header
+            body: JSON.stringify(flashcardSet) // body data type must match "Content-Type" header
         };
         fetch(url, options).then(response => {
 
             response.json().then(data => {
                 console.log(data);
-                window.location = `/flashcard.html?id=` + data.id;
             })
         })
         .catch(err => {
@@ -59,6 +58,3 @@
         })
   }
 </script>
-
-
-

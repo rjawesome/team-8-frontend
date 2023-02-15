@@ -1,9 +1,7 @@
 <link rel="stylesheet" href="{{ '/assets/css/search.scss?v=' | append: site.github.build_revision | relative_url }}">
-
 <html>
   <head>
-    <meta charset="UTF-8">
-    <title>Flashcard Statistics</title>
+    <title>FlashcardStats</title>
   </head>
   <body>
     <h2>Flashcard Statistics</h2>
@@ -17,8 +15,7 @@
           <th>Incorrect</th>
         </tr>
       </thead>
-      <tbody id="stats-table-body">
-      </tbody>
+      <tbody id="flashcard-sets-container"></tbody>
     </table>
   
   <script>
@@ -75,10 +72,7 @@
 
             statsTableBody.appendChild(row);
           });
-        })
-        .catch(error => {
-          console.error('Failed to fetch flashcard statistics', error);
-        });
+      });
     </script>
   </body>
 </html>
