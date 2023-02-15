@@ -15,7 +15,7 @@
           <th>Incorrect</th>
         </tr>
       </thead>
-      <tbody id="flashcard-sets-container"></tbody>
+      <tbody id="stats-table-body"></tbody>
     </table>
   
   <script>
