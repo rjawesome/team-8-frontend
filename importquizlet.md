@@ -37,7 +37,7 @@
   
   formVarName.onsubmit = (e) => {
 	  e.preventDefault()
-    const flashcardSet = { email: "rohanj2006@gmail.com", password: "password", name: document.getElementById("setName").setLink, flashcards};
+    const flashcardSet = { email: "rohanj2006@gmail.com", password: "password", id: setLink.value.splice(-1)[0].split("/")[0]};
 
     var url = "https://csa-backend.rohanj.dev/api/flashcard/getQuizlet";
     const options = {
