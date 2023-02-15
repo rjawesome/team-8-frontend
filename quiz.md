@@ -57,6 +57,7 @@ fetch("https://csa-backend.rohanj.dev/api/flashcard/getFlashcardSetMC",
     const container = document.createElement("li")
     const qElem = document.createElement("h4")
     qElem.innerHTML = "What definition matches this term: " + q;
+    qElem.id = "q"+qNum;
     container.appendChild(qElem)
 
     const choices = document.createElement("ul")
@@ -101,16 +102,26 @@ function getCheckedValue(radioName) {
     }
     return ret;
 }
-function getScore() {
+function getScore(email, password) {
     // disable submit button
     document.getElementById("check").disabled = true
     var score = 0;
-    for (var i = 0; i < answers.length; i++)
-        if (getCheckedValue("question" + i) === answers[i]) score += 1;
-    return score;
+    var statsInfo = {email, password, id: ID, statsList: []}
+    for (var i = 0; i < answers.length; i++) {
+       if (getCheckedValue("question" + i) === answers[i]) {
+          score++;
+          statsInfo.statsList.push({id: datas[i].id, correct: true}) 
+       } else {
+          document.getElementById("q"+i).color = 'red'
+          statsInfo.statsList.push({id: datas[i].id, correct: false})
+       }
+    }
+    return {score, statsInfo};
 }
 function returnScore() {
+    var { score, statsInfo } = getScore("rohanj2006@gmail.com", "password")
     document.getElementById("myresults").innerHTML =
-        "Your score is " + getScore() + "/" + answers.length;
+        "Your score is " + score + "/" + answers.length;
+    console.log(statsInfo)
 }
 </script>
