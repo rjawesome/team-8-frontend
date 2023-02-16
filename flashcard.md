@@ -122,6 +122,7 @@
         headers: {
           'Content-Type': 'application/json'
         },
+        credentials: 'include',
         body: JSON.stringify({email: "rohanj2006@gmail.com", password: "password", id: flashcards[currentFlashcard].id, correct: isCorrect})
       }
     ).then(response => {
