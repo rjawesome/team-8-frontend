@@ -36,7 +36,8 @@
           headers: {
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify({id: ID})
+          body: JSON.stringify({id: ID}),
+          credentials: 'include'
         }
       ).then(response => {
         response.json().then(data => {
@@ -49,6 +50,7 @@
         headers: {
           'Content-Type': 'application/json'
         },
+        credentials: 'include',
         body: JSON.stringify({email: "rohanj2006@gmail.com", password: "password", id: ID})
       })
         .then(response => response.json())
