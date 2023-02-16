@@ -44,6 +44,7 @@
         fetch(url, request_options)
             .then(response => {
                 response.json().then(data => {
+                    alert("Account created! Please enter your credentials to log in.")
                     window.location.href = "/login";
                     
                 })
