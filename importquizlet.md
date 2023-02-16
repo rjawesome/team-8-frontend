@@ -23,16 +23,21 @@
 
 
 <form id="import-quizlet">
+	<label for="setName">Set Name:</label>
+  <input type="text" id="setName" name = "setName" class="form-control" placeholder="test">
   <label>Quizlet Link:
     <input type="text" id="enter-link" name="enter-link">
   </label><br>
+  <input type="checkbox" id="public-check" name="public-check">Public
   <button type="button" id="submit-set-button">Submit</button>
+	
 </form>
 
 
 <script>
   const flashcardSet = document.getElementById("import-quizlet");
   const setLink = document.getElementById("enter-link");
+  const publicCheck = document.getElementById("public-check");
   
   document.getElementById("submit-set-button").onclick = (e) => {
 	  e.preventDefault()
@@ -50,8 +55,40 @@
         fetch(url, options).then(response => {
 
             response.json().then(data => {
-                console.log(data);
-            })
+				const input = data;
+				const output = [];
+
+				for (const key in input) {
+				  const value = input[key];
+				  output.push({front: key, back: value});
+				}
+
+				console.log(output);
+				const flashcardData = { email: "rohanj2006@gmail.com", password: "password", name: document.getElementById("setName").value, isPublic: publicCheck.checked, flashcards: output};
+				const flashcardsJson = JSON.stringify(flashcardData);
+				console.log(flashcardsJson);
+
+				var url = "https://csa-backend.rohanj.dev/api/flashcard/createFlashcardSet";
+				const options = {
+					method: 'POST', // *GET, POST, PUT, DELETE, etc.
+					headers: {
+					'Content-Type': 'application/json'
+					// 'Content-Type': 'application/x-www-form-urlencoded',
+					},
+					body: flashcardsJson // body data type must match "Content-Type" header
+				};
+				fetch(url, options).then(response => {
+
+					response.json().then(data => {
+					console.log(data);
+					window.location = `/flashcard.html?id=` + data.id;
+					})
+				})
+
+				.catch(err => {
+					console.log("Error: " + err);
+				})
+			})
         })
         .catch(err => {
             console.log("Error: " + err);
