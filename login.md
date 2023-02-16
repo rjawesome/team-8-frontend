@@ -21,38 +21,64 @@
 <script>
     // Replace with localhost:8085 for testing
     
-    //var url = "https://localhost:8085/api/jwt/authenticate
-    var url = "https://csa-backend.rohanj.dev/api/login/authenticate";
+    var url = "https://localhost:8085/api/jwt/authenticate
+    // var url = "https://csa-backend.rohanj.dev/api/login/authenticate";
     
+    // function login_user() {
+    //     const body = {
+
+    //         // Should be same as person????
+    //         email: document.getElementById("email").value,
+    //         password: document.getElementById("password").value
+    //     };
+    //     const request_options = {
+    //         method: 'POST',
+    //         body: JSON.stringify(body),
+    //         headers: {
+    //             "content-type": 'application/json'
+    //         }
+    //     };
+    //     console.log(JSON.stringify(body));
+
+
+    //     fetch(url, request_options)
+    //         .then(response => {
+    //             response.text().then(data => {
+    //                 console.log(data);
+    //                 document.cookie = "token=" + data;
+    //                 //window.location.href = "/team-8-frontend/search";
+    //             })
+    //         })
+    //         .catch(err => {
+    //             console.log("Error: " + err);
+    //         })
+    // }
+
     function login_user() {
         const body = {
-
             // Should be same as person????
             email: document.getElementById("email").value,
             password: document.getElementById("password").value
         };
         const request_options = {
-            method: 'POST',
+            method: "POST",
+            mode: "cors",
+            cache: "no-cache",
+            credentials: "include",
             body: JSON.stringify(body),
             headers: {
-                "content-type": 'application/json'
+                "content-type": "application/json"
             }
         };
-        console.log(JSON.stringify(body));
-
-
-        fetch(url, request_options)
+        fetch(login_url, request_options)
             .then(response => {
-                response.text().then(data => {
-                    console.log(data);
-                    document.cookie = "token=" + data;
-                    //window.location.href = "/team-8-frontend/search";
-                })
-            })
-            .catch(err => {
-                console.log("Error: " + err);
+                if (!response.ok) {
+                    const errorMsg = "Login error: " + response.status;
+                    console.log(errorMsg);
+                    return;
+                }
+                window.location.href = "/team-8-frontend/search";
             })
     }
-
 
 </script>
