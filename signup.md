@@ -1,18 +1,57 @@
 ## Sign Up
 
-<form action="" method="post" id="form">
-    <table>
-        <tr>
-            <td>Email:</td>
-            <td><input type="email" name="email" required></td>
-        </tr>
-        <tr>
-            <td>Password:</td>
-            <td><input type="text" name="password" required></td>
-        </tr>
-        <tr>
-            <td><input type="submit" value="Create"></td>
-        </tr>
-    </table>
-</form>
-<h4>Have an account? <a href="/login">Login</a></h4>
+<!--No actions yet-->
+
+
+<table>
+    <tr>
+        <td>Email:</td>
+        <td><input type="email" id="email" name="email" required></td>
+    </tr>
+    <tr>
+        <td>Password:</td>
+        <td><input type="text" id="password" name="password" required></td>
+    </tr>
+    <tr>
+        <td><button type="submit" value="Submit" onclick="create_user()">Submit</button></td>
+    </tr>
+</table>
+<h4>Don't have an account? Sign up <a href="/signup">here</a></h4>
+
+<script>
+    // Replace with localhost:8085 for testing
+    
+
+    var url = "https://csa-backend.rohanj.dev/api/user/createPerson";
+    
+    function create_user() {
+        const body = {
+
+            // Should be same as person????
+            email: document.getElementById("email").value,
+            password: document.getElementById("password").value
+        };
+        const request_options = {
+            method: 'POST',
+            body: JSON.stringify(body),
+            headers: {
+                "content-type": 'application/json'
+            }
+        };
+        console.log(JSON.stringify(body));
+
+
+        fetch(url, request_options)
+            .then(response => {
+                response.json().then(data => {
+                    window.location.href = "/login";
+                    
+                })
+            })
+            .catch(err => {
+                console.log("Error: " + err);
+            })
+    }
+
+
+</script>
