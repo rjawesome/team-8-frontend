@@ -24,7 +24,7 @@
     var url = "csa-backend.rohanj.dev";
     //var url = "localhost:8085";
 
-    const login_url = "https://" + url + "/api/jwt/authenticate";
+    const login_url = "https://" + url + "/api/login/authenticate";
     
     function login_user() {
         const body = {
@@ -50,7 +50,11 @@
                     console.log(errorMsg);
                     return;
                 }
-                window.location.href = "/team-8-frontend/search";
+                response.text().then(data => {
+                    console.log(data);
+                    document.cookie = data;
+                    window.location.href = "/team-8-frontend/search";
+                })
             })
     }
 
