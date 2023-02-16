@@ -23,6 +23,7 @@
     
 
     var url = "https://csa-backend.rohanj.dev/api/login/authenticate";
+    var responsey = undefined;
     
     function login_user() {
         const body = {
@@ -36,18 +37,22 @@
             body: JSON.stringify(body),
             headers: {
                 "content-type": 'application/json'
-            }
+            },
+            credentials: 'include'
         };
         console.log(JSON.stringify(body));
 
 
         fetch(url, request_options)
             .then(response => {
-                response.text().then(data => {
-                    console.log(data);
-                    document.cookie = "token=" + data;
-                    //window.location.href = "/team-8-frontend/search";
-                })
+                if (response.status != 200) {
+                    alert("error occured")
+                    return
+                }
+                alert("logged in!")
+                responsey = response
+                console.log(response)
+                // window.location.href = "/yourflashcardsets"
             })
             .catch(err => {
                 console.log("Error: " + err);
