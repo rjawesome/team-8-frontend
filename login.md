@@ -2,29 +2,27 @@
 
 <!--No actions yet-->
 
-<form onsubmit="login_user()" method="post" id="form" autocomplete="on">
-    <table>
-        <tr>
-            <td>Email:</td>
-            <td><input type="email" id="email" name="email" required></td>
-        </tr>
-        <tr>
-            <td>Password:</td>
-            <td><input type="text" id="password" name="password" required></td>
-        </tr>
-        <tr>
-            <td><input type="submit" value="Submit"></td>
-        </tr>
-    </table>
-</form>
+
+<table>
+    <tr>
+        <td>Email:</td>
+        <td><input type="email" id="email" name="email" required></td>
+    </tr>
+    <tr>
+        <td>Password:</td>
+        <td><input type="text" id="password" name="password" required></td>
+    </tr>
+    <tr>
+        <td><button type="submit" value="Submit" onclick="login_user()">Submit</button></td>
+    </tr>
+</table>
 <h4>Don't have an account? Sign up <a href="/signup">here</a></h4>
 
 <script>
     // Replace with localhost:8085 for testing
-    var url = "csa-backend.rohanj.dev";
-    // var url = "localhost:8085";
+    
 
-    const login_url = "https://" + url + "/api/login/authenticate";
+    var url = "https://csa-backend.rohanj.dev/api/login/authenticate";
     
     function login_user() {
         const body = {
@@ -34,27 +32,25 @@
             password: document.getElementById("password").value
         };
         const request_options = {
-            method: "POST",
-            mode: "cors",
-            cache: "no-cache",
-            credentials: "include",
+            method: 'POST',
             body: JSON.stringify(body),
             headers: {
-                "content-type": "application/json"
+                "content-type": 'application/json'
             }
         };
-        fetch(login_url, request_options)
+        console.log(JSON.stringify(body));
+
+
+        fetch(url, request_options)
             .then(response => {
-                if (!response.ok) {
-                    const errorMsg = "Login error: " + response.status;
-                    console.log(errorMsg);
-                    return;
-                }
                 response.text().then(data => {
                     console.log(data);
-                    document.cookie = data;
-                    window.location.href = "/team-8-frontend/search";
+                    document.cookie = "token=" + data;
+                    //window.location.href = "/team-8-frontend/search";
                 })
+            })
+            .catch(err => {
+                console.log("Error: " + err);
             })
     }
 
