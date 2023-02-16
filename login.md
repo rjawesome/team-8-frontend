@@ -13,15 +13,21 @@
         <td><input type="text" id="password" name="password" required></td>
     </tr>
     <tr>
-        <td><button type="submit" value="Submit" onclick="login_user()">Submit</button></td>
+        <td><button id="submit" type="submit" value="Submit">Submit</button></td> 
+        <!-- onclick="login_user()" -->
+        <!-- ngl onclick sucks ass-->
     </tr>
 </table>
 <h4>Don't have an account? Sign up <a href="/signup">here</a></h4>
 
 <script>
     // Replace with localhost:8085 for testing
+
+    const el = document.getElementById("submit");
+    el.addEventListener("click", login_user, false);
+
     
-    var url = "https://localhost:8085/api/jwt/authenticate
+    var url = "http://localhost:8085/api/jwt/authenticate
     // var url = "https://csa-backend.rohanj.dev/api/login/authenticate";
     
     // function login_user() {
