@@ -17,16 +17,21 @@ header {
     display: flex;
     list-style: none;
     margin: 0;
-    padding: 150;
+    padding: 0;
     align-items: center;
   }
   
   nav a {
     color: #fff;
     text-decoration: none;
-    padding: 30px;
+    padding-left: 50px;
     font-size: 16px;
     
+  }
+  .navbar-brand {
+    text-decoration: none;
+    padding-left: 50px;
+    font-size: 16px;
   }
 
 </style>
@@ -34,6 +39,11 @@ header {
 <header>
     <nav class="navbar navbar-inverse navbar-fixed-top " role="navigation">
       <ul>
+        <li>
+        <a class="navbar-brand" href="/">
+          <img src="assets/img/favicon.jpg" width="40" height="30" class="d-inline-block align-top" alt="">
+        </a>
+        </li>
         <li><a href="/">Home</a></li>
         <li><a href="/importquizlet">Import Set</a></li>
         <li><a href="/createcard">Create Set</a></li>
