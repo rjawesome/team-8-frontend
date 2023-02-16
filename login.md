@@ -13,7 +13,7 @@
         <td><input type="text" id="password" name="password" required></td>
     </tr>
     <tr>
-        <td><button id="submit" type="submit" value="Submit">Submit</button></td> 
+        <td><button onclick="login_user()" id="submit" type="submit" value="Submit">Submit</button></td> 
         <!-- onclick="login_user()" -->
         <!-- ngl onclick sucks ass-->
     </tr>
