@@ -37,6 +37,7 @@
 <script>
   const flashcardSet = document.getElementById("import-quizlet");
   const setLink = document.getElementById("enter-link");
+  const publicCheck = document.getElementById("public-check");
   
   document.getElementById("submit-set-button").onclick = (e) => {
 	  e.preventDefault()
