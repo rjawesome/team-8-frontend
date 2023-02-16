@@ -49,6 +49,7 @@
       headers: {
         'Content-Type': 'application/json'
       },
+      credentials: 'include',
       body: JSON.stringify({id: ID})
     }
   ).then(response => {
