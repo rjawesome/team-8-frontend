@@ -50,6 +50,15 @@
         fetch(url, options).then(response => {
 
             response.json().then(data => {
+		const input = data;
+		const output = [];
+
+		for (const key in input) {
+		  const value = input[key];
+		  output.push({front: key, back: value});
+		}
+
+		console.log(output);
                 console.log(data);
             })
         })
