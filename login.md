@@ -82,7 +82,7 @@
                 alert("logged in!")
                 responsey = response
                 console.log(response)
-                // window.location.href = "/yourflashcardsets"
+                window.location.href = "/yourflashcardsets"
             })
             .catch(err => {
                 console.log("Error: " + err);
