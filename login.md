@@ -22,7 +22,7 @@
 <script>
     // Replace with localhost:8085 for testing
     var url = "csa-backend.rohanj.dev";
-    //var url = "localhost:8085";
+    // var url = "localhost:8085";
 
     const login_url = "https://" + url + "/api/login/authenticate";
     
