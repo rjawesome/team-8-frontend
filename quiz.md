@@ -47,6 +47,7 @@ fetch("https://csa-backend.rohanj.dev/api/flashcard/getFlashcardSetMC",
     headers: {
       'Content-Type': 'application/json'
     },
+    credentials: 'include',
     body: JSON.stringify({id: ID})
   }
 ).then(data => data.json())
@@ -131,6 +132,7 @@ function returnScore() {
          'Accept': 'application/json',
          'Content-Type': 'application/json'
        },
+       credentials: 'include',
        body: JSON.stringify(statsInfo)
     });
 }
