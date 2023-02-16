@@ -83,7 +83,7 @@
                     console.log(errorMsg);
                     return;
                 }
-                window.location.href = "/team-8-frontend/search";
+                window.location.href = "/search";
             })
     }
 
