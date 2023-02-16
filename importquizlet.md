@@ -50,17 +50,40 @@
         fetch(url, options).then(response => {
 
             response.json().then(data => {
-		const input = data;
-		const output = [];
+				const input = data;
+				const output = [];
 
-		for (const key in input) {
-		  const value = input[key];
-		  output.push({front: key, back: value});
-		}
+				for (const key in input) {
+				  const value = input[key];
+				  output.push({front: key, back: value});
+				}
 
-		console.log(output);
-                console.log(data);
-            })
+				console.log(output);
+				const flashcardData = { email: "rohanj2006@gmail.com", password: "password", name: document.getElementById("setName").value, isPublic: publicCheck.checked, flashcards: output};
+				const flashcardsJson = JSON.stringify(flashcardData);
+				console.log(flashcardsJson);
+
+				var url = "https://csa-backend.rohanj.dev/api/flashcard/createFlashcardSet";
+				const options = {
+					method: 'POST', // *GET, POST, PUT, DELETE, etc.
+					headers: {
+					'Content-Type': 'application/json'
+					// 'Content-Type': 'application/x-www-form-urlencoded',
+					},
+					body: flashcardsJson // body data type must match "Content-Type" header
+				};
+				fetch(url, options).then(response => {
+
+					response.json().then(data => {
+					console.log(data);
+					window.location = `/flashcard.html?id=` + data.id;
+					})
+				})
+
+				.catch(err => {
+					console.log("Error: " + err);
+				})
+			})
         })
         .catch(err => {
             console.log("Error: " + err);
