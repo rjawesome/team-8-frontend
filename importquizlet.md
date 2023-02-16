@@ -23,10 +23,14 @@
 
 
 <form id="import-quizlet">
+	<label for="setName">Set Name:</label>
+  <input type="text" id="setName" name = "setName" class="form-control" placeholder="test">
   <label>Quizlet Link:
     <input type="text" id="enter-link" name="enter-link">
   </label><br>
+  <input type="checkbox" id="public-check" name="public-check">Public
   <button type="button" id="submit-set-button">Submit</button>
+	
 </form>
 
 
