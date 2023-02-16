@@ -75,6 +75,7 @@
 					'Content-Type': 'application/json'
 					// 'Content-Type': 'application/x-www-form-urlencoded',
 					},
+                                        credentials: 'include',
 					body: flashcardsJson // body data type must match "Content-Type" header
 				};
 				fetch(url, options).then(response => {
