@@ -27,7 +27,7 @@
     el.addEventListener("click", login_user, false);
 
     
-    var url = "http://localhost:8085/api/jwt/authenticate
+    var url = "http://localhost:8085/api/jwt/authenticate"
     // var url = "https://csa-backend.rohanj.dev/api/login/authenticate";
     
     // function login_user() {
