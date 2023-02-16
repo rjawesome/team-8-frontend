@@ -70,7 +70,7 @@
                 "content-type": "application/json"
             }
         };
-        fetch(login_url, request_options)
+        fetch(url, request_options)
             .then(response => {
                 if (!response.ok) {
                     const errorMsg = "Login error: " + response.status;
