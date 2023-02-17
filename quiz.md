@@ -148,7 +148,6 @@ function returnScore() {
     fetch("https://csa-backend.rohanj.dev/api/stats/createStatsBatch", {
        method: 'POST',
        headers: {
-         'Accept': 'application/json',
          'Content-Type': 'application/json'
        },
        credentials: 'include',
