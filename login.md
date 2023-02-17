@@ -10,7 +10,7 @@
     </tr>
     <tr>
         <td>Password:</td>
-        <td><input type="text" id="password" name="password" required></td>
+        <td><input type="password" id="password" name="password" required></td>
     </tr>
     <tr>
         <td><button onclick="login_user()" id="submit" type="submit" value="Submit">Submit</button></td> 
