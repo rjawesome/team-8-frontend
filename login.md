@@ -21,23 +21,7 @@
 <h4>Don't have an account? Sign up <a href="/signup">here</a></h4>
 
 <script>
-    fetch("https://csa-backend.rohanj.dev/api/flashcard/getYourUser",
-    { 
-        method: 'POST',  
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: '{}',
-        credentials: 'include'
-        }
-        ).then(data => {
-            if (data.status != 200) {
-            window.location.href = "/login"
-            data.json().then(console.log)
-            } else {
-            return data.json()
-            }
-    })
+    
     // Replace with localhost:8085 for testing
 
     var url = "https://csa-backend.rohanj.dev/api/login/authenticate";
