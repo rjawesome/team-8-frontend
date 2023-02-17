@@ -1,6 +1,7 @@
 ## Flashcard
 
 <link rel="stylesheet" href="{{ '/assets/css/flashcard.css?v=' | append: site.github.build_revision | relative_url }}">
+<h2 id="set-name"></h2>
 <p id="counter">1/1</p>
 <div class="flip-card" id="flipcard" name="flipcard">
   <div class="flip-card-inner" id="inner-flipcard" onclick="flipCard()">
@@ -37,7 +38,7 @@
             return data.json()
             }
     })
-    
+
   var flipped = false
   const flipCard = () => {
     flipped = !flipped
@@ -74,6 +75,7 @@
       console.log(data);
       const flashcardSet = data.flashcards;
       flashcards = flashcardSet;
+      document.getElementById("set-name").innerHTML = data.meta.name;
       document.getElementById("front").innerHTML = flashcardSet[0].front;
       document.getElementById("back").innerHTML = flashcardSet[0].back;
       document.getElementById("counter").innerHTML = "1/" + flashcardSet.length;
