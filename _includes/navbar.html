@@ -137,6 +137,8 @@ header {
         userButton.onclick = function() {
           window.location.href = "/login";
         }
+
+        document.getElementsByClassName("dropdown-content")[0].style.display = "none";
         
       } else {
         response.json().then(data => {
