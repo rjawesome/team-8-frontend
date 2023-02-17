@@ -24,6 +24,8 @@
     
     // Replace with localhost:8085 for testing
 
+    var test_url = "http://localhost:8085/api/jwt/authenticate";
+
     var url = "https://csa-backend.rohanj.dev/api/login/authenticate";
     var responsey = undefined;
     
@@ -74,7 +76,7 @@
             },
             credentials: 'include'
         };
-        fetch(url, request_options)
+        fetch(test_url, request_options)
             .then(response => {
                 if (response.status != 200) {
                     alert("error occured")
