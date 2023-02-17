@@ -119,3 +119,21 @@ header {
     </nav>
   </header>
   
+
+  <script>
+    fetch("https://csa-backend.rohanj.dev/api/login/getYourUser",
+      { 
+        method: 'POST',  
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        credentials: 'include',
+        body: "{}"
+      }
+    ).then(response => {
+      response.json().then(data => {
+        console.log(data);
+        document.getElementById("user-dropdown-button").innerHTML = data.email;
+      });
+    });
+  </script>
