@@ -113,7 +113,7 @@ header {
             <i class="fa fa-caret-down"></i>
           </button>
           <div class="dropdown-content">
-            <a href="/logout">Logout</a>
+            <a href="#" onclick="logout()">Logout</a>
           </div>
       </ul>
     </nav>
@@ -136,4 +136,22 @@ header {
         document.getElementById("user-dropdown-button").innerHTML = data.email;
       });
     });
+
+    function logout() {
+      fetch("https://csa-backend.rohanj.dev/api/login/logout",
+        { 
+          method: 'POST',  
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          credentials: 'include',
+          body: "{}"
+        }
+      ).then(response => {
+        response.json().then(data => {
+          console.log(data);
+          window.location.href = "/";
+        });
+      });
+    }
   </script>
