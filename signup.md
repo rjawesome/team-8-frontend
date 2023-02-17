@@ -16,7 +16,7 @@
         <td><button type="submit" value="Submit" onclick="create_user()">Submit</button></td>
     </tr>
 </table>
-<h4>Don't have an account? Sign up <a href="/signup">here</a></h4>
+<h4>Have an account? Log in <a href="/login">here</a></h4>
 
 <script>
     // Replace with localhost:8085 for testing
