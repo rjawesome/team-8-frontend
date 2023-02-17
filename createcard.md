@@ -66,7 +66,7 @@
             return data.json()
             }
     })
-    
+
   const flashcardContainer = document.getElementById("flashcard-container");
   const flashcardForm = document.getElementById("flashcard-form");
   const addCardButton = document.getElementById("add-card-button");
