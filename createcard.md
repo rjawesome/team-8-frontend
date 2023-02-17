@@ -50,7 +50,7 @@
 
 <script>
   console.log("hello")
-  fetch("https://csa-backend.rohanj.dev/api/flashcard/getYourUser",
+  fetch("https://csa-backend.rohanj.dev/api/login/getYourUser",
     { 
         method: 'POST',  
         headers: {
@@ -61,7 +61,7 @@
         }
         ).then(data => {
             if (data.status != 200) {
-            //window.location.href = "/login"
+            window.location.href = "/login"
             data.json().then(console.log)
             } else {
             return data.json()

@@ -35,7 +35,7 @@
 
 
 <script>
-  fetch("https://csa-backend.rohanj.dev/api/flashcard/getYourUser",
+  fetch("https://csa-backend.rohanj.dev/api/login/getYourUser",
     { 
         method: 'POST',  
         headers: {
