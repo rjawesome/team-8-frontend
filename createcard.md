@@ -49,6 +49,24 @@
 </form>
 
 <script>
+  fetch("https://csa-backend.rohanj.dev/api/flashcard/getYourUser",
+    { 
+        method: 'POST',  
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: '{}',
+        credentials: 'include'
+        }
+        ).then(data => {
+            if (data.status != 200) {
+            window.location.href = "/login"
+            data.json().then(console.log)
+            } else {
+            return data.json()
+            }
+    })
+    
   const flashcardContainer = document.getElementById("flashcard-container");
   const flashcardForm = document.getElementById("flashcard-form");
   const addCardButton = document.getElementById("add-card-button");
