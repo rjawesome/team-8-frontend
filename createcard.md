@@ -61,7 +61,7 @@
         }
         ).then(data => {
             if (data.status != 200) {
-            //window.location.href = "/login"
+            window.location.href = "/login"
             data.json().then(console.log)
             } else {
             return data.json()
