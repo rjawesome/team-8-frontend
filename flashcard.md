@@ -21,6 +21,8 @@
 
 
 <script>
+  var isLoggedIn = false;
+
   fetch("https://csa-backend.rohanj.dev/api/login/getYourUser",
     { 
         method: 'POST',  
@@ -35,6 +37,7 @@
             window.location.href = "/login"
             data.json().then(console.log)
             } else {
+              isLoggedIn = true;
             return data.json()
             }
     })
@@ -43,8 +46,10 @@
   const flipCard = () => {
     flipped = !flipped
     document.getElementById("inner-flipcard").classList.toggle("flipped")
-    for (b of document.getElementsByClassName("answer-btn")) {
-      b.style.display = b.style.display === "none" ? "inline-block" : "none";
+    if (isLoggedIn) {
+      for (b of document.getElementsByClassName("answer-btn")) {
+        b.style.display = b.style.display === "none" ? "inline-block" : "none";
+      }
     }
   }
 
