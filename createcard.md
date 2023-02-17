@@ -49,6 +49,7 @@
 </form>
 
 <script>
+  console.log("hello")
   fetch("https://csa-backend.rohanj.dev/api/flashcard/getYourUser",
     { 
         method: 'POST',  
@@ -118,7 +119,7 @@
             'Content-Type': 'application/json'
             // 'Content-Type': 'application/x-www-form-urlencoded',
             },
-            credentials: 'include'
+            credentials: 'include',
             body: flashcardsJson // body data type must match "Content-Type" header
         };
         fetch(url, options).then(response => {
