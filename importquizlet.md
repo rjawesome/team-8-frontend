@@ -35,6 +35,24 @@
 
 
 <script>
+  fetch("https://csa-backend.rohanj.dev/api/flashcard/getYourUser",
+    { 
+        method: 'POST',  
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: '{}',
+        credentials: 'include'
+        }
+        ).then(data => {
+            if (data.status != 200) {
+            window.location.href = "/login"
+            data.json().then(console.log)
+            } else {
+            return data.json()
+            }
+    })
+
   const flashcardSet = document.getElementById("import-quizlet");
   const setLink = document.getElementById("enter-link");
   const publicCheck = document.getElementById("public-check");
