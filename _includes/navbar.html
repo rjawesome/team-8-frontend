@@ -100,7 +100,7 @@ header {
         <li><a href="/importquizlet">Import Set</a></li>
         <li><a href="/createcard">Create Set</a></li>
         <li><a href="/search">Search</a></li>
-        <li><a href="/login">Login</a></li>
+        <!-- <li><a href="/login">Login</a></li> -->
         <!-- <td><a href="plan">Plan</a></td> -->
         <!-- <td><a href="/frq1">FRQ 1</a></td>
         <td><a href="/frq2">FRQ 2</a></td>
@@ -121,6 +121,7 @@ header {
   
 
   <script>
+    const userButton = document.getElementById("user-dropdown-button");
     fetch("https://csa-backend.rohanj.dev/api/login/getYourUser",
       { 
         method: 'POST',  
@@ -131,10 +132,19 @@ header {
         body: "{}"
       }
     ).then(response => {
-      response.json().then(data => {
-        console.log(data);
-        document.getElementById("user-dropdown-button").innerHTML = data.email;
-      });
+      if (response.status != 200) {
+        userButton.innerHTML = "Login";
+        userButton.onclick = function() {
+          window.location.href = "/login";
+        }
+        
+      } else {
+        response.json().then(data => {
+          console.log(data);
+          userButton.innerHTML = data.email;
+        });
+      }
+      
     });
 
     function logout() {
