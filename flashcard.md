@@ -20,7 +20,24 @@
 
 
 <script>
-  
+  fetch("https://csa-backend.rohanj.dev/api/login/getYourUser",
+    { 
+        method: 'POST',  
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: '{}',
+        credentials: 'include'
+        }
+        ).then(data => {
+            if (data.status != 200) {
+            window.location.href = "/login"
+            data.json().then(console.log)
+            } else {
+            return data.json()
+            }
+    })
+    
   var flipped = false
   const flipCard = () => {
     flipped = !flipped
