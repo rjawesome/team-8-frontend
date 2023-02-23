@@ -76,7 +76,7 @@
             },
             credentials: 'include'
         };
-        fetch(test_url, request_options)
+        fetch(url, request_options)
             .then(response => {
                 if (response.status != 200) {
                     alert("error occured")
