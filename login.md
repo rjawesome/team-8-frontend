@@ -79,7 +79,7 @@
         fetch(url, request_options)
             .then(response => {
                 if (response.status != 200) {
-                    alert("error occured")
+                    alert("Error Occured: Please check your email and password")
                     return
                 }
                 alert("logged in!")
