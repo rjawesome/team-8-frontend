@@ -1,4 +1,10 @@
-## Team 8: The Project
+## Team 8: Code Cards
+
+Code Cards is a revolutionary studying tool, letting anyone learn anything. Code Cards utilizes a variety of studying methods such as flashcards and quizzes so that users are thoroughly tested. This even comes with a revolutionary statistics tracker, allowing users to review what mistakes they have made so they can focus on their weakest areas. Never fear running out of things to learn, as Code Cards has a huge database of flashcards that can be updated by its huge userbase or by direcly uploading a link to Quizlet flashcards. This extensive database can be navigated through an interactive search bar, letting users find exactly what they need at ease. Plus, Code Cards comes with a secure signup and login system using Json Web Tokens, preventing any malicious attackers from stealing user information. If users want to keep their own flashcard lists private, they can do so with a tick of a checkbox.
+
+Start studying with Code Cards today!
+
+
 If your ubuntu version is old, upgrading ruby
 ```bash
 wget http://ftp.ruby-lang.org/pub/ruby/2.7/ruby-2.7.1.tar.gz
