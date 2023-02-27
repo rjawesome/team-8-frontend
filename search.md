@@ -19,9 +19,8 @@
     </table>
   </body>
   <script>
-    // add event listener for form submission
-  document.getElementById("form").onsubmit = (function(event) {
-  event.preventDefault();
+  function doSearch(event) {
+  if (event) event.preventDefault();
   var searchTerm = document.getElementById("search-bar").value;
   // send searchTerm and classFilter to server or perform search logic here
   document.getElementById("flashcard-sets-container").innerHTML = '';
@@ -65,7 +64,9 @@
         document.getElementById("flashcard-sets-container").appendChild(flashcardSetRow);
       })
     });
-  })
+  }
+    // add event listener for form submission
+  document.getElementById("form").onsubmit = doSearch
   // submit by default
-  document.getElementById("form").submit()
+  doSearch()
     </script>
