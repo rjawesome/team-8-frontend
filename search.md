@@ -66,4 +66,6 @@
       })
     });
   })
+  // submit by default
+  document.getElementById("form").submit()
     </script>
