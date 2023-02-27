@@ -39,6 +39,8 @@ Importing from Quizlet
 
 Start studying with Code Cards 🃏 today!
 
+https://csa.rohanj.dev/
+
 
 If your ubuntu version is old, upgrading ruby
 ```bash
