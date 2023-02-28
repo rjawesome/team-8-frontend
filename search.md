@@ -22,7 +22,7 @@
   <script>
   let user;
   function doSearch(event) {
-  let admin = user?.adnin;
+  let admin = user?.admin;
   if (event) event.preventDefault();
   var searchTerm = document.getElementById("search-bar").value;
   // send searchTerm and classFilter to server or perform search logic here
@@ -37,7 +37,7 @@
   }
   ).then(data => data.json())
     .then(data => {
-      data.forEach(data => {
+      data.forEach(function (data) {
         var flashcardSetRow = document.createElement("tr");
         var flashcardSetElem = document.createElement("td");
         var flashcardSetName = document.createElement("p");
@@ -69,6 +69,27 @@
           deleteButton.innerHTML = "delete"
           deleteButton.onclick = () => {
             console.log("delete")
+            var url = "https://csa-backend.rohanj.dev/api/flashcard/deleteFlashcardSet";
+    const options = {
+            method: 'POST', // *GET, POST, PUT, DELETE, etc.
+            headers: {
+            'Content-Type': 'application/json'
+            // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: JSON.stringify({id: data.id}), // body data type must match "Content-Type" header
+            credentials: 'include'
+        };
+        fetch(url, options).then(response => {
+
+            response.json().then(data => {
+                alert("Succesfully deleted");
+                window.location = '/search';
+            })
+        })
+
+        .catch(err => {
+            console.log("Error: " + err);
+        })
           }
           flashcardSetRow.appendChild(deleteButton)
         } else {
@@ -83,7 +104,6 @@
     // add event listener for form submission
   document.getElementById("form").onsubmit = doSearch
   // submit by default
-  doSearch()
 
   fetch("https://csa-backend.rohanj.dev/api/login/getYourUser",
   { 
@@ -94,7 +114,7 @@
       body: '{}',
       credentials: 'include'
       }
-      ).then(data => data.json()).then(data => { user = data; })
+      ).then(data => data.json()).then(data => { user = data;   doSearch(); })
  
 
     </script>
