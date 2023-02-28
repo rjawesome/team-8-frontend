@@ -73,7 +73,7 @@
           flashcardSetRow.appendChild(deleteButton)
         } else {
           var btn = document.createElement("td")
-          btn.innnerHTML = "N/A"
+          btn.innerHTML = "N/A"
           flashcardSetRow.appendChild(btn)
         }
         document.getElementById("flashcard-sets-container").appendChild(flashcardSetRow);
@@ -85,16 +85,16 @@
   // submit by default
   doSearch()
 
-   fetch("https://csa-backend.rohanj.dev/api/login/getYourUser",
-    { 
-        method: 'POST',  
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: '{}',
-        credentials: 'include'
-        }
-        ).then(data => data.json()).then(data => { user = data; })
+  fetch("https://csa-backend.rohanj.dev/api/login/getYourUser",
+  { 
+      method: 'POST',  
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: '{}',
+      credentials: 'include'
+      }
+      ).then(data => data.json()).then(data => { user = data; })
  
 
     </script>
