@@ -71,7 +71,7 @@
             console.log("delete")
             var url = "https://csa-backend.rohanj.dev/api/flashcard/deleteFlashcardSet";
     const options = {
-            method: 'POST', // *GET, POST, PUT, DELETE, etc.
+            method: 'DELETE', // *GET, POST, PUT, DELETE, etc.
             headers: {
             'Content-Type': 'application/json'
             // 'Content-Type': 'application/x-www-form-urlencoded',
