@@ -81,8 +81,9 @@
         };
         fetch(url, options).then(response => {
 
-            response.json().then(data => {
-                console.log(data);
+            response.json().then(data2 => {
+                console.log(data2);
+                console.log(data.id);
                 alert("Succesfully deleted");
                 window.location = '/search';
             })
