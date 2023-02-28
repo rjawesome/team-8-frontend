@@ -22,7 +22,7 @@
   <script>
   let user;
   function doSearch(event) {
-  let admin = user?.isAdmin
+  let admin = user?.adnin;
   if (event) event.preventDefault();
   var searchTerm = document.getElementById("search-bar").value;
   // send searchTerm and classFilter to server or perform search logic here
