@@ -13,13 +13,16 @@
           <th>Quiz:</th>
           <th>Flashcards:</th>
           <th>Stats:</th>
+          <th>Delete:</th>
         </tr>
       </thead>
       <tbody id="flashcard-sets-container"></tbody>
     </table>
   </body>
   <script>
+  let user;
   function doSearch(event) {
+  let admin = user?.isAdmin
   if (event) event.preventDefault();
   var searchTerm = document.getElementById("search-bar").value;
   // send searchTerm and classFilter to server or perform search logic here
@@ -61,6 +64,18 @@
         flashcardSetRow.appendChild(mcButton)
         flashcardSetRow.appendChild(flashButton)
         flashcardSetRow.appendChild(statsButton)
+        if (admin) {
+          var deleteButton = document.createElement("td")
+          deleteButton.innerHTML = "delete"
+          deleteButton.onclick = () => {
+            console.log("delete")
+          }
+          flashcardSetRow.appendChild(deleteButton)
+        } else {
+          var btn = document.createElement("td")
+          btn.innnerHTML = "N/A"
+          flashcardSetRow.appendChild(btn)
+        }
         document.getElementById("flashcard-sets-container").appendChild(flashcardSetRow);
       })
     });
@@ -69,4 +84,17 @@
   document.getElementById("form").onsubmit = doSearch
   // submit by default
   doSearch()
+
+   fetch("https://csa-backend.rohanj.dev/api/login/getYourUser",
+    { 
+        method: 'POST',  
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: '{}',
+        credentials: 'include'
+        }
+        ).then(data => data.json()).then(data => { user = data; })
+ 
+
     </script>
