@@ -71,7 +71,10 @@
             body: JSON.stringify(flashcardSet) // body data type must match "Content-Type" header
         };
         fetch(url, options).then(response => {
-
+            if (response.status >= 400) {
+	       alert("Bad Quizlet URL")
+	       return;
+	    }
             response.json().then(data => {
 				const input = data;
 				const output = [];
