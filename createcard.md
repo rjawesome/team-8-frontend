@@ -41,7 +41,7 @@
     </table>
   </div>
   <button type="button" id="add-card-button">Add Card</button><br>
-  <label>Class:
+  <label style="visibility: hidden;">Class:
     <input type="text" id="set-class" name="set-class">
   </label><br>
   <input type="checkbox" id="public-check" name="public-check">Public

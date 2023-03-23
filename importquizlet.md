@@ -61,7 +61,7 @@
 	  e.preventDefault()
     const flashcardSet = { email: "rohanj2006@gmail.com", password: "password", id: setLink.value.split("quizlet.com/").splice(-1)[0].split("/")[0]};
 
-    var url = "http://localhost:8085/api/flashcard/getQuizlet";
+    var url = "https://csa-backend.rohanj.dev/api/flashcard/getQuizlet";
     const options = {
             method: 'POST', // *GET, POST, PUT, DELETE, etc.
             headers: {
@@ -71,7 +71,10 @@
             body: JSON.stringify(flashcardSet) // body data type must match "Content-Type" header
         };
         fetch(url, options).then(response => {
-
+            if (response.status >= 400) {
+	       alert("Bad Quizlet URL")
+	       return;
+	    }
             response.json().then(data => {
 				const input = data;
 				const output = [];

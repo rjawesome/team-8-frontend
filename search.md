@@ -71,7 +71,7 @@
             console.log("delete")
             var url = "https://csa-backend.rohanj.dev/api/flashcard/deleteFlashcardSet";
     const options = {
-            method: 'POST', // *GET, POST, PUT, DELETE, etc.
+            method: 'DELETE', // *GET, POST, PUT, DELETE, etc.
             headers: {
             'Content-Type': 'application/json'
             // 'Content-Type': 'application/x-www-form-urlencoded',
@@ -81,7 +81,9 @@
         };
         fetch(url, options).then(response => {
 
-            response.json().then(data => {
+            response.json().then(data2 => {
+                console.log(data2);
+                console.log(data.id);
                 alert("Succesfully deleted");
                 window.location = '/search';
             })
