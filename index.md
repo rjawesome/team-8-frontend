@@ -1,4 +1,4 @@
-## Code Cards
+## Quiz Me
 
 
 <style>
@@ -17,16 +17,21 @@
   display: table;
   clear: both;
 }
+
+.img {
+  width: 30px;
+  height: 30px;
+}
 </style>
 
 <div class="row">
   <div class="column">
     <h3>Description:</h3>
-     <p>Code Cards is an online platform that makes studying and learning easier and more engaging for students. With a focus on flashcards and quizzes, students can study a wide range of school subjects and track their progress with detailed performance statistics. Our platform offers an interactive and customizable experience, allowing students to choose the subjects and topics they want to study and connect with other students for a supportive learning environment. Join Code Cards today for a smarter way to study and achieve your academic goals.
+     <p>Quiz Me is an online platform that makes studying and learning easier and more engaging for students. With a focus on flashcards and quizzes, students can study a wide range of school subjects and track their progress with detailed performance statistics. Our platform offers an interactive and customizable experience, allowing students to choose the subjects and topics they want to study and connect with other students for a supportive learning environment. Join Quiz Me today for a smarter way to study and achieve your academic goals.
 </p>
   </div>
   <div class="column">
-    <img src="assets/img/logo8.png">
+    <img src="assets/img/logo12.png">
   </div>
   <div class="column">
     <h3>Subjects:</h3>
