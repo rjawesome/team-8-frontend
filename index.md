@@ -28,6 +28,8 @@
   <div class="column">
     <h3>Description:</h3>
      <p>Quiz Me is an online platform that makes studying and learning easier and more engaging for students. With a focus on flashcards and quizzes, students can study a wide range of school subjects and track their progress with detailed performance statistics. Our platform offers an interactive and customizable experience, allowing students to choose the subjects and topics they want to study and connect with other students for a supportive learning environment. Join Quiz Me today for a smarter way to study and achieve your academic goals.
+       <br>
+       Sample login credentials: <br> Email: sample@sample.com <br> Password: S@mpl3123
 </p>
   </div>
   <div class="column">
